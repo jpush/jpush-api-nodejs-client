@@ -1,0 +1,36 @@
+{
+  "name": "jpush-sdk",
+  "version": "0.1.1",
+  "description": "Node.js binding for JPush SDK",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha -t 50000 --reporter spec"
+  },
+  "keywords": [
+    "jpush",
+    "push"
+  ],
+  "author": "jpush",
+  "license": "MIT",
+  "dependencies": {
+    "request": "~2.27.0",
+    "popularcrypto": "0.0.2"
+  },
+  "devDependencies": {
+    "mocha": "~1.12.1",
+    "should": "~1.2.2",
+    "faker-zh-cn": "~0.5.8"
+  },
+  "homepage": "https://www.jpush.cn/",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:jpush/jpush-api-nodejs-client.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jpush/jpush-api-nodejs-client/issues"
+  },
+  "directories": {
+    "doc": "doc",
+    "test": "test"
+  }
+}
