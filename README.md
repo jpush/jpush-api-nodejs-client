@@ -1,56 +1,85 @@
-Node.js sdk for JPush
-======================
-极光推送服务端 SDK Node.js版  
-forked from [https://github.com/youxiachai/JPush-Node.js-sdk](https://github.com/youxiachai/JPush-Node.js-sdk)  
-感谢作者做的先期工作。
-## Install
+#JPush API client library for Java
 
-```
-npm install jpush-sdk
-```
+## 概述
+这是 JPush REST API 的 Nodejs 版本封装开发包，是由极光推送官方提供的，一般支持最新的 API 功能。
+
+[REST API 文档][1]
+
+
+## Install
+尽请期待
+
 
 ## Example
 
-### Quick start(简易版)
-
+### Quick start
+此Demo展示如何使用Node lib向所有用户推送通知。
 ``` js
 var JPush = require('jpush-sdk');
+var client = JPush.buildClient({appKey:"Your appkey", masterSecret:"Your masterSecret"});
+payload.alertAll("Hello JPush.");
 
-var jpushClient = JPush.build({appkey: "your app key", masterSecret: "your master secret key"});
-
-var sendno = 1;
-var msgTitle = 'hello';
-var msgContent = 'world';
-jpushClient.sendNotificationWithAppKey(sendno, msgTitle, msgContent, function (err, body) {
-    // JPush server message
+client.sendPush(payload, function (err, result) {
     if (err) {
-        console.log('error happened:'+err);
+        console.log(err);
+    } else {
+        console.log(result);
     }
-    console.log(body);
 });
+
+
 ```
 
 ### Expert mode(高级版)
+首先先构建推送对象Payload。Payload的结构与REST API中所要求结构一致。  
+详情参考 [REST API 文档 推送对象][2]
 
 ``` js
 var JPush = require('jpush-sdk');
+var client = JPush.buildClient({appKey:"Your appkey", masterSecret:"Your masterSecret"});
+//构建推送对象
+var payload = JPush.buildPayload();
+payload.setPlatform(["ios","android"]);
+payload.alertAll("Hello JPush.");
+payload.setAudience({
+        tag:["tag1", "tag2"],
+        tag_and:["tag3", "tag4"]}
+);
+payload.setAndroidNotification({
+    alert : 'android alert',
+    title : 'android title'
+});
+payload.setOptions({time_to_live:60});
+client.sendPush(payload, function (err, result) {
+    if (err) {
+        console.log(err);
+    } else {
+        console.log(result);
+    }
+});
 
-var jpushClient = JPush.build({appkey: "you app key", masterSecret: "you master secret key"});
+```
 
-// type value 的限制与文档一致
-var receiver = {};
-receiver.type = jpushClient.pushType.broadcast;
-receiver.value = '';
+关于Payload对象的方法，参考 [详细API文档][3]
 
-var msg = {};
-msg.content =  'Hi! from boardcast';
-msg.platform = jpushClient.platformType.both;
+### 获取统计信息
+本Node lib简易封装获取统计信息的接口，传入推送API返回的 msg_id 列表，多个 msg_id 用逗号隔开，最多支持100个msg_id。  
+更多详细要求，请参考 [Report API 文档][4]
 
-jpushClient.pushSimpleNotification(1, receiver, msg, function (err, body) {
-  // JPush server message
-  console.log(body);
+```js
+var JPush = require('jpush-sdk');
+var client = JPush.buildClient({appKey:"Your appkey", masterSecret:"Your masterSecret"});
+client.getReport("837477020,1374362852", function(err, result) {
+    if (err) {
+        console.log(err);
+    } else {
+        console.log(result);
+    }
 });
 ```
 
-API文档：[api.md](/doc/api.md)  
-官方接口说明：[http://docs.jpush.cn/display/dev/Push+API+v2](http://docs.jpush.cn/display/dev/Push+API+v2)
+
+  [1]: http://docs.jpush.cn/display/dev/Push-API-v3
+  [2]: http://docs.jpush.cn/display/dev/Push-API-v3#Push-API-v3-%E6%8E%A8%E9%80%81%E5%AF%B9%E8%B1%A1
+  [3]: doc/api.md
+  [4]: http://docs.jpush.cn/display/dev/Report-API
