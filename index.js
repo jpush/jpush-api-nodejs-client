@@ -4,4 +4,4 @@
  * @version: 1.0
  * To change this template use File | Settings | File Templates.
  */
-module.exports = require('./lib/jpush.js');
+module.exports = require('./lib/jpushv3.js');
