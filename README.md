@@ -3,8 +3,8 @@
 ## 概述
 这是 JPush REST API 的 Nodejs 版本封装开发包，是由极光推送官方提供的，一般支持最新的 API 功能。
 
-[REST API 文档][1]
-[NodeJS API DOC][5]
+[REST API 文档][1]  
+[NodeJS API DOC][2]
 
 
 ## Install
@@ -33,7 +33,7 @@ client.sendPush(payload, function (err, result) {
 
 ### Expert mode(高级版)
 首先先构建推送对象Payload。Payload的结构与REST API中所要求结构一致。  
-详情参考 [REST API 文档 推送对象][2]
+详情参考 [REST API 文档 推送对象][3]
 
 ``` js
 var JPush = require('jpush-sdk');
@@ -61,11 +61,11 @@ client.sendPush(payload, function (err, result) {
 
 ```
 
-关于Payload对象的方法，参考 [详细API文档][3]
+关于Payload对象的方法，参考 [详细API文档][4]
 
 ### 获取统计信息
 本Node lib简易封装获取统计信息的接口，传入推送API返回的 msg_id 列表，多个 msg_id 用逗号隔开，最多支持100个msg_id。  
-更多详细要求，请参考 [Report API 文档][4]
+更多详细要求，请参考 [Report API 文档][5]
 
 ```js
 var JPush = require('jpush-sdk');
@@ -81,7 +81,7 @@ client.getReport("837477020,1374362852", function(err, result) {
 
 
   [1]: http://docs.jpush.cn/display/dev/Push-API-v3
-  [2]: http://docs.jpush.cn/display/dev/Push-API-v3#Push-API-v3-%E6%8E%A8%E9%80%81%E5%AF%B9%E8%B1%A1
-  [3]: doc/api.md
-  [4]: http://docs.jpush.cn/display/dev/Report-API
-  [5]: doc/api.md
+  [2]: doc/api.md
+  [3]: http://docs.jpush.cn/display/dev/Push-API-v3#Push-API-v3-%E6%8E%A8%E9%80%81%E5%AF%B9%E8%B1%A1
+  [4]: doc/api.md
+  [5]: http://docs.jpush.cn/display/dev/Report-API
