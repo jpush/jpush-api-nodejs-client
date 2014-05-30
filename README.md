@@ -3,7 +3,7 @@
 ## 概述
 这是 JPush REST API 的 Nodejs 版本封装开发包，是由极光推送官方提供的，一般支持最新的 API 功能。
 
-[REST API 文档][1]  
+[REST API 文档][1]
 [NodeJS API DOC][5]
 
 
