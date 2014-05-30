@@ -54,15 +54,23 @@ payload = JPush.buildPayload({
         sendno : 12345
     }
 });
-payload.setMessage({
-    msg_content : 'mes content',
-    title : 'msg title',
-    content_type : 'msg content type',
-    extras : {key1 : 'value1', 'key2' : "value2"}
+payload.alertAll("Hello, JPush");
+payload.setAudience({
+    tag : ['555', '666']
 });
 
 console.log(payload.toJSON());
+/*
 client.sendPush(payload, function(err, result) {
+    if (err) {
+        console.log(err);
+    } else {
+        console.log(result);
+    }
+});
+*/
+
+client.getReport("510185290", function(err, result) {
     if (err) {
         console.log(err);
     } else {
