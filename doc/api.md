@@ -1,10 +1,9 @@
 #JPush Api Nodejs client doc
 
-------
 ##简要概述
-本lib主要实现两个对象。 
-1.Payload对象，Payload结构请参考 [REST API 文档 推送对象][1]  
-2.JPushClient对象，主要功能为推送Payload对象，获取统计信息。  
+本lib主要实现两个对象。
+1.Payload对象，Payload结构请参考 [REST API 文档 推送对象][1]
+2.JPushClient对象，主要功能为推送Payload对象，获取统计信息。
 
 ### JPushClient
 构建器

@@ -1,9 +1,10 @@
-#JPush API client library for Java
+#JPush API client library for Nodejs
 
 ## 概述
 这是 JPush REST API 的 Nodejs 版本封装开发包，是由极光推送官方提供的，一般支持最新的 API 功能。
 
 [REST API 文档][1]
+[NodeJS API DOC][5]
 
 
 ## Install
@@ -83,3 +84,4 @@ client.getReport("837477020,1374362852", function(err, result) {
   [2]: http://docs.jpush.cn/display/dev/Push-API-v3#Push-API-v3-%E6%8E%A8%E9%80%81%E5%AF%B9%E8%B1%A1
   [3]: doc/api.md
   [4]: http://docs.jpush.cn/display/dev/Report-API
+  [5]: doc/api.md
