@@ -4,8 +4,8 @@
 
 var JPush = require('../index');
 
-var appkey = 'Your appkey';
-var masterSecret = 'Your masterSecret';
+var appkey = 'your appkey';
+var masterSecret = 'your masterSecret';
 var client = JPush.buildClient({appkey : appkey, masterSecret:masterSecret});
 
 //easy push
@@ -15,7 +15,6 @@ var payload = JPush.buildPayload({
     }
 });
 payload.alertAll("Hi, JPush");
-console.log('Payload1: ' + payload.toJSON());
 client.sendPush(payload, function(err, result) {
     if (err) {
         console.log(err);
@@ -64,7 +63,6 @@ payload2.setNotification({
         extras : {key1 : 'value1', 'key2' : "value2"}
     }
 });
-console.log('Payload2: ' + payload2.toJSON());
 client.sendPush(payload2, function(err, result) {
     if (err) {
         console.log(err);
@@ -114,7 +112,6 @@ var options = {
     }
 };
 var payload3 = JPush.buildPayload(options);
-console.log('Payload3: ' + payload3.toJSON());
 client.sendPush(payload3, function(err, result) {
     if (err) {
         console.log(err);

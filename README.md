@@ -79,6 +79,12 @@ client.getReport("837477020,1374362852", function(err, result) {
 });
 ```
 
+### 单元测试
+在程序根目录下执行 
+```
+mocha test
+```
+
 
   [1]: http://docs.jpush.cn/display/dev/Push-API-v3
   [2]: doc/api.md

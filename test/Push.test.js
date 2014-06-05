@@ -105,8 +105,7 @@ describe('Payload test', function() {
         payload.alertAll("Hello, JPush");
         payload.setOptions({
             time_to_live : 60,
-            override_msg_id : 842625298,
-            apns_production : 1
+            apns_production : true
         });
         setTimeout(function() {
             client.sendPush(payload, function(err, result) {
