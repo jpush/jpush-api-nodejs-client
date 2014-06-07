@@ -1,14 +1,15 @@
 {
   "name": "jpush-sdk",
-  "version": "0.1.1",
-  "description": "Node.js binding for JPush SDK",
+  "version": "3.0.0",
+  "description": "JPush's officially supported Node.js client library.",
   "main": "index.js",
   "scripts": {
     "test": "mocha -t 50000 --reporter spec"
   },
   "keywords": [
     "jpush",
-    "push"
+    "push",
+    "极光推送",
   ],
   "author": "jpush",
   "license": "MIT",
