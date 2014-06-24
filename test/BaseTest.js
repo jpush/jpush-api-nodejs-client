@@ -1,0 +1,16 @@
+exports.appKey = 'dd1066407b044738b6479275';
+exports.masterSecret = "2b38ce69b1de2a7fa95706ea";
+exports.ALERT = "JPush Test - alert";
+exports.TITLE = "JPush Test - title";
+exports.MSG_CONTENT = "JPush Test - msg content";
+exports.TAG1 = "tag1";
+exports.TAG1 = "tag1";
+exports.TAG2 = "tag2";
+exports.TAG_ALL = "tag_all";
+exports.TAG_NO = "tag_no";
+exports.ALIAS1 = "alias1";
+exports.ALIAS2 = "alias2";
+exports.ALIAS_NO = "alias_no";
+exports.REGISTRATION_ID1 = "0900e8d85ef";
+exports.REGISTRATION_ID2 = "0a04ad7d8b4";
+exports.EXTRAS = {'key1' : 'value1', 'key2' : 'value2'};
