@@ -1,4 +1,4 @@
-var JPush = require("../lib/JPush.js");
+var JPush = require("../lib/JPush/JPush.js");
 
 var client = JPush.buildClient('47a3ddda34b2602fa9e17c01', 'd94f733358cca97b18b2cb98');
 var tooBig = '这款Signature Touch手机的价格约合人民币12万元，相信能买得起它的，应该都不会很在意参数，但即便如此，Vertu依然做的很到位，其配备的是4.7英寸1080p蓝宝石屏，搭载骁龙801处理器和2GB RAM，提供64GB存储空间和2275mAh电池。这款Signature Touch手机的价格约合人民币12万元，相信能买得起它的，应该都不会很在意参数，但即便如此，Vertu依然做的很到位，其配备的是4.7英寸1080p蓝宝石屏，搭载骁龙801处理器和2GB RAM，提供64GB存储空间和2275mAh电池。这款Signature Touch手机的价格约合人民币12万元，相信能买得起它的，应该都不会很在意参数，但即便如此，Vertu依然做的很到位，其配备的是4.7英寸1080p蓝宝石屏，搭载骁龙801处理器和2GB RAM，提供64GB存储空间和2275mAh电池。这款Signature Touch手机的价格约合人民币12万元，相信能买得起它的，应该都不会很在意参数，但即便如此，Vertu依然做的很到位，其配备的是4.7英寸1080p蓝宝石屏，搭载骁龙801处理器和2GB RAM，提供64GB存储空间和2275mAh电池。这款Signature Touch手机的价格约合人民币12万元，相信能买得起它的，应该都不会很在意参数，但即便如此，Vertu依然做的很到位，其配备的是4.7英寸1080p蓝宝石屏，搭载骁龙801处理器和2GB RAM，提供64GB存储空间和2275mAh电池。这款Signature Touch手机的价格约合人民币12万元，相信能买得起它的，应该都不会很在意参数，但即便如此，Vertu依然做的很到位，其配备的是4.7英寸1080p蓝宝石屏，搭载骁龙801处理器和2GB RAM，提供64GB存储空间和2275mAh电池。';
@@ -39,5 +39,7 @@ client.push().setPlatform('ios', 'android')
             console.log('Msg_id: ' + res.msg_id);
         }
     });
+
+
 
 
