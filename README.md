@@ -1,7 +1,7 @@
-#JPush API client library for Nodejs
+JPush API client library for NodeJS
 
 ## 概述
-这是 JPush REST API 的 Nodejs 版本封装开发包，是由极光推送官方提供的，一般支持最新的 API 功能。
+本SDK提供JPush服务端接口的Node封装，与 JPush Rest API 组件通信。使用时引用该模块即可，可参考附带Demo学习使用方法。
 
 [REST API 文档][1]  
 [NodeJS API DOC][2]
@@ -16,48 +16,39 @@
 ### Quick start
 此Demo展示如何使用Node lib向所有用户推送通知。
 ``` js
-var JPush = require('jpush-sdk');
-var client = JPush.buildClient({appKey:"Your appkey", masterSecret:"Your masterSecret"});
-payload.alertAll("Hello JPush.");
+var JPush = require("../lib/JPush/JPush.js");
+var client = JPush.buildClient('your appKey', 'your masterSecret');
 
-client.sendPush(payload, function (err, result) {
-    if (err) {
-        console.log(err);
-    } else {
-        console.log(result);
-    }
-});
-
-
+//easy push
+client.push().setPlatform(JPush.ALL)
+    .setAudience(JPush.ALL)
+    .setNotification('Hi, JPush', JPush.ios('ios alert', 'happy', 5))
+    .send(function(err, res) {
+        if (err) {
+            console.log(err.message);
+        } else {
+            console.log('Sendno: ' + res.sendno);
+            console.log('Msg_id: ' + res.msg_id);
+        }
+    });
 ```
 
 ### Expert mode(高级版)
-首先先构建推送对象Payload。Payload的结构与REST API中所要求结构一致。  
-详情参考 [REST API 文档 推送对象][3]
 
 ``` js
-var JPush = require('jpush-sdk');
-var client = JPush.buildClient({appKey:"Your appkey", masterSecret:"Your masterSecret"});
-//构建推送对象
-var payload = JPush.buildPayload();
-payload.setPlatform(["ios","android"]);
-payload.alertAll("Hello JPush.");
-payload.setAudience({
-        tag:["tag1", "tag2"],
-        tag_and:["tag3", "tag4"]}
-);
-payload.setAndroidNotification({
-    alert : 'android alert',
-    title : 'android title'
-});
-payload.setOptions({time_to_live:60});
-client.sendPush(payload, function (err, result) {
-    if (err) {
-        console.log(err);
-    } else {
-        console.log(result);
-    }
-});
+client.push().setPlatform('ios', 'android')
+    .setAudience(JPush.tag('555', '666'), JPush.alias('666,777'))
+    .setNotification('Hi, JPush', JPush.ios('ios alert'), JPush.android('android alert', null, 1))
+    .setMessage('msg content')
+    .setOptions(null, 60)
+    .send(function(err, res) {
+        if (err) {
+            console.log(err.message);
+        } else {
+            console.log('Sendno: ' + res.sendno);
+            console.log('Msg_id: ' + res.msg_id);
+        }
+    });
 
 ```
 
@@ -68,13 +59,19 @@ client.sendPush(payload, function (err, result) {
 更多详细要求，请参考 [Report API 文档][5]
 
 ```js
-var JPush = require('jpush-sdk');
-var client = JPush.buildClient({appKey:"Your appkey", masterSecret:"Your masterSecret"});
-client.getReport("837477020,1374362852", function(err, result) {
+var JPush = require("../lib/JPush/JPush.js");
+var client = JPush.buildClient('your appKey', 'your masterSecret');
+
+client.getReportReceiveds('746522674,344076897', function(err, res) {
     if (err) {
-        console.log(err);
+        console.log(err.message);
     } else {
-        console.log(result);
+        for (var i=0; i<res.length; i++) {
+            console.log(res[i].android_received);
+            console.log(res[i].ios_apns_sent);
+            console.log(res[i].msg_id);
+            console.log('------------');
+        }
     }
 });
 ```
@@ -91,3 +88,6 @@ mocha test
   [3]: http://docs.jpush.cn/display/dev/Push-API-v3#Push-API-v3-%E6%8E%A8%E9%80%81%E5%AF%B9%E8%B1%A1
   [4]: doc/api.md
   [5]: http://docs.jpush.cn/display/dev/Report-API
+
+
+
