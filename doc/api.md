@@ -13,11 +13,11 @@ JPush API Client，调用该类的实例执行对JPush API的请求
 
 JPush.buildClient(appkey, masterSecret, retryTimes)  
 
-|参数|类型|必须|默认值|说明|
-| ------ | ------ | ------| ------|
-|appKey|string|是|无|开发者appKey，可从JPush Portal获取|
-|masterSecret|string|是|无|开发者masterSecret，可从JPush Portal获取|
-|retryTimes|int|否|5|请求失败重试次数|
+参数|类型|必须|默认值|说明
+ ------ | ------ | ------| ------
+appKey|string|是|无|开发者appKey，可从JPush Portal获取
+masterSecret|string|是|无|开发者masterSecret，可从JPush Portal获取
+retryTimes|int|否|5|请求失败重试次数
 
 
 
