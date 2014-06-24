@@ -1,4 +1,4 @@
-var JPush = require("../lib/JPush.js");
+var JPush = require("../lib/JPush/JPush.js");
 
 var client = JPush.buildClient('47a3ddda34b2602fa9e17c01', 'd94f733358cca97b18b2cb98');
 
