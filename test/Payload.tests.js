@@ -173,11 +173,7 @@ describe('PushPayload test', function() {
                sendno : 123456
            },
            notification : {
-               alert: Base.ALERT,
-               ios : {
-                   sound : '',
-                   badge : 1
-               }
+               alert: Base.ALERT
            }
        };
         var result = JSON.stringify(json);

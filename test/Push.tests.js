@@ -4,7 +4,7 @@ var Base = require('./BaseTest');
 
 describe('Push test', function() {
     var client;
-    var timeStep = 5;
+    var timeStep = 1;
     var times = 1;
 
     before(function () {
