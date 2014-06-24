@@ -3,7 +3,7 @@
  */
 
 var should = require('should');
-var JPush = require('../index');
+var JPush = require('../../index');
 
 describe('Payload test', function() {
 
@@ -17,7 +17,7 @@ describe('Payload test', function() {
         var payload = JPush.buildPayload();
         payload.toJSON().should.equal(result);
         done();
-    })
+    });
 
     it("test set setPayload", function(done) {
         var json = {

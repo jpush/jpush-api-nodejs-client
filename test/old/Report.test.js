@@ -3,7 +3,7 @@
  */
 
 var should = require('should');
-var JPush = require('../index');
+var JPush = require('../../index');
 
 describe('Report test', function() {
     var appkey = '47a3ddda34b2602fa9e17c01';
