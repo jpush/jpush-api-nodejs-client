@@ -1,7 +1,6 @@
 /**
- * @author: youxiachai
- * @Date: 13-8-31
- * @version: 1.0
- * To change this template use File | Settings | File Templates.
+ * @author: JPush
+ * @Date: 14-6-24
+ * @version: 3.1.0
  */
-module.exports = require('./lib/jpushv3.js');
+module.exports = require('./lib/JPush.js');
