@@ -12,7 +12,8 @@ describe('PushPayload test', function() {
     it('platform test1', function(done) {
         var json = {
             options : {
-                sendno : 123456
+                sendno : 123456,
+                apns_production : false
             },
             platform : 'all'
         };
@@ -26,7 +27,8 @@ describe('PushPayload test', function() {
     it('platform test2', function(done) {
         var json = {
             options : {
-                sendno : 123456
+                sendno : 123456,
+                apns_production : false
             },
             platform : ['ios', 'winphone']
         };
@@ -40,7 +42,8 @@ describe('PushPayload test', function() {
     it('platform test3', function(done) {
         var json = {
             options : {
-                sendno : 123456
+                sendno : 123456,
+                apns_production : false
             },
             platform : ['ios', 'winphone']
         };
@@ -54,7 +57,8 @@ describe('PushPayload test', function() {
     it('audience test1', function(done) {
         var json = {
             options : {
-                sendno : 123456
+                sendno : 123456,
+                apns_production : false
             },
             audience : 'all'
         };
@@ -69,7 +73,8 @@ describe('PushPayload test', function() {
     it('audience test2', function(done) {
         var json = {
             options : {
-                sendno : 123456
+                sendno : 123456,
+                apns_production : false
             },
             audience : {
                 registration_id : ['id1', 'id2'],
@@ -94,7 +99,8 @@ describe('PushPayload test', function() {
     it('audience test2', function(done) {
         var json = {
             options : {
-                sendno : 123456
+                sendno : 123456,
+                apns_production : false
             },
             audience : {
                 registration_id : ['id1', 'id2'],
@@ -119,7 +125,8 @@ describe('PushPayload test', function() {
     it('message test1', function(done) {
         var json = {
             options : {
-                sendno : 123456
+                sendno : 123456,
+                apns_production : false
             },
             message : {
                 msg_content : 'msg content'
@@ -135,7 +142,8 @@ describe('PushPayload test', function() {
     it('message test2', function(done) {
         var json = {
             options : {
-                sendno : 123456
+                sendno : 123456,
+                apns_production : false
             },
             message : {
                 msg_content : 'msg content',
@@ -170,7 +178,8 @@ describe('PushPayload test', function() {
     it ('notification test1', function(done) {
        var json = {
            options : {
-               sendno : 123456
+               sendno : 123456,
+               apns_production : false
            },
            notification : {
                alert: Base.ALERT
@@ -186,7 +195,8 @@ describe('PushPayload test', function() {
     it ('notification test2', function(done) {
         var json = {
             options : {
-                sendno : 123456
+                sendno : 123456,
+                apns_production : false
             },
             notification : {
                 ios : {
@@ -207,7 +217,8 @@ describe('PushPayload test', function() {
     it('notification test3', function(done) {
         var json = {
             options : {
-                sendno : 123456
+                sendno : 123456,
+                apns_production : false
             },
             notification : {
                 winphone : {
