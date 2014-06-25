@@ -52,6 +52,8 @@
 |字段名|说明|
 |-----|-----|
 |ALL|设置audience与platform为推送全部对象时使用|
+|DISABLE_SOUND|设置ios notification不需要声音时使用|
+|DISABLE_BADGE|设置ios notification不需要角标时使用|
 
 类
 
