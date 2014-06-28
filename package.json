@@ -1,6 +1,6 @@
 {
   "name": "jpush-sdk",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "JPush's officially supported Node.js client library.",
   "main": "index.js",
   "scripts": {
@@ -8,8 +8,9 @@
   },
   "keywords": [
     "jpush",
+    "JPush API",
     "push",
-    "极光推送",
+    "极光推送"
   ],
   "author": "jpush",
   "license": "MIT",
