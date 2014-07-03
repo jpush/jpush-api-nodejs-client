@@ -254,4 +254,51 @@ describe('PushPayload test', function() {
         done();
     });
 
+
+    it ("ios length validate fail test", function(done) {
+        var isVaildate = client.push().setPlatform(JPush.ALL)
+            .setAudience(JPush.ALL)
+            .setNotification(JPush.ios(Base.tooBig220))
+            .isIosExceedLength();
+
+       isVaildate.should.equal(false);
+       done();
+    });
+
+    it ("ios length validate success test", function(done) {
+        var isVaildate = client.push().setPlatform(JPush.ALL)
+            .setAudience(JPush.ALL)
+            .setNotification(JPush.ios(Base.ALERT))
+            .isIosExceedLength();
+
+        isVaildate.should.equal(true);
+        done();
+    });
+    it ("ios length validate fail1 test", function(done) {
+        var isVaildate = client.push().setPlatform(JPush.ALL)
+            .setAudience(JPush.ALL)
+            .setNotification(JPush.ios(Base.tooBig220))
+            .isGlobalExceedLength();
+
+        isVaildate.should.equal(false);
+        done();
+    });
+    it ("ios length validate fail2 test", function(done) {
+        var isVaildate = client.push().setPlatform(JPush.ALL)
+            .setAudience(JPush.ALL)
+            .setNotification(Base.tooBig1200, JPush.ios(Base.ALERT))
+            .isGlobalExceedLength();
+
+        isVaildate.should.equal(false);
+        done();
+    });
+    it ("ios length validate success test", function(done) {
+        var isVaildate = client.push().setPlatform(JPush.ALL)
+            .setAudience(JPush.ALL)
+            .setNotification(Base.ALERT, JPush.ios(Base.ALERT))
+            .isGlobalExceedLength();
+
+        isVaildate.should.equal(true);
+        done();
+    });
 });
