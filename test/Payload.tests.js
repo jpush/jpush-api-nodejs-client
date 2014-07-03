@@ -261,7 +261,7 @@ describe('PushPayload test', function() {
             .setNotification(JPush.ios(Base.tooBig220))
             .isIosExceedLength();
 
-       isVaildate.should.equal(false);
+       isVaildate.should.equal(true);
        done();
     });
 
@@ -271,7 +271,7 @@ describe('PushPayload test', function() {
             .setNotification(JPush.ios(Base.ALERT))
             .isIosExceedLength();
 
-        isVaildate.should.equal(true);
+        isVaildate.should.equal(false);
         done();
     });
     it ("ios length validate fail1 test", function(done) {
@@ -280,7 +280,7 @@ describe('PushPayload test', function() {
             .setNotification(JPush.ios(Base.tooBig220))
             .isGlobalExceedLength();
 
-        isVaildate.should.equal(false);
+        isVaildate.should.equal(true);
         done();
     });
     it ("ios length validate fail2 test", function(done) {
@@ -289,7 +289,7 @@ describe('PushPayload test', function() {
             .setNotification(Base.tooBig1200, JPush.ios(Base.ALERT))
             .isGlobalExceedLength();
 
-        isVaildate.should.equal(false);
+        isVaildate.should.equal(true);
         done();
     });
     it ("ios length validate success test", function(done) {
@@ -298,7 +298,7 @@ describe('PushPayload test', function() {
             .setNotification(Base.ALERT, JPush.ios(Base.ALERT))
             .isGlobalExceedLength();
 
-        isVaildate.should.equal(true);
+        isVaildate.should.equal(false);
         done();
     });
 });
