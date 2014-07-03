@@ -143,6 +143,8 @@ JPush API Client，调用该类的实例执行对JPush API的请求
 |setOptions|设置options,本方法接收4个参数，`sendno(int)`, `timeToLive(int)`, `overrideMsgId(int)`, `apnsProduction(boolean)`|
 |toJSON|将当前payload对象转换为json字符串|
 |send|推送当前payload对象| 
+|isIosExceedLength|检测当前payload是否超出ios notification长度限定。返回true/false。（ios notification不超过220并且ios notification + message不超过1200）|
+|isGlobalExceedLength|检测当前payload是否超出长度限定。返回true/false。（ios notification不超过220并且所有平台的notification + message不超过1200）
 
 开发者可以参考 [推送示例][2] 快速了解推送细节
 
