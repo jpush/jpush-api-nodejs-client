@@ -8,7 +8,15 @@ JPush API client library for NodeJS
 
 
 ## Install
-尽请期待
+```
+npm install jpush-sdk
+#or
+{
+    "dependencies": {
+        "jpush-sdk": "*"
+    }
+}
+```
 
 
 ## Example
