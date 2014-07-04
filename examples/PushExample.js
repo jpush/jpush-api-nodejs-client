@@ -21,6 +21,7 @@ client.push().setPlatform(JPush.ALL)
     });
 
 //full push
+
 client.push().setPlatform('ios', 'android')
     .setAudience(JPush.tag('555', '666'), JPush.alias('666,777'))
     .setNotification('Hi, JPush', JPush.ios('ios alert'), JPush.android('android alert', null, 1))
@@ -30,6 +31,8 @@ client.push().setPlatform('ios', 'android')
         if (err) {
             if (err instanceof JPush.APIConnectionError) {
                 console.log(err.message);
+                //Response Timeout means your request to the server may have already received, please check whether or not to push
+                console.log(err.isResponseTimeout);
             } else if (err instanceof  JPush.APIRequestError) {
                 console.log(err.message);
             }

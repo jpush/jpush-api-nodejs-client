@@ -6,6 +6,8 @@ client.getReportReceiveds('746522674,344076897', function(err, res) {
     if (err) {
         if (err instanceof JPush.APIConnectionError) {
             console.log(err.message);
+            //Response Timeout means your request to the server may have already received, please check whether or not to push
+            console.log(err.isResponseTimeout);
         } else if (err instanceof  JPush.APIRequestError) {
             console.log(err.message);
         }
