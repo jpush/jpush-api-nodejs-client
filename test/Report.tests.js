@@ -12,7 +12,8 @@ describe('Report test', function() {
     it('report test1', function(done) {
         client.getReportReceiveds('1083691241', function(err, res) {
             if (!err && res) {
-                res.length.should.equal(1);
+                body = JSON.parse(res.body)
+                body.length.should.equal(1);
                 done();
             }
         });
@@ -20,7 +21,8 @@ describe('Report test', function() {
     it('report test2', function(done) {
         client.getReportReceiveds('1083691241,', function(err, res) {
             if (!err && res) {
-                res.length.should.equal(2);
+                body = JSON.parse(res.body)
+                body.length.should.equal(2);
                 done();
             }
         });
@@ -28,7 +30,8 @@ describe('Report test', function() {
     it('report test3', function(done) {
         client.getReportReceiveds('1083691241,2023215321', function(err, res) {
             if (!err && res) {
-                res.length.should.equal(2);
+                body = JSON.parse(res.body)
+                body.length.should.equal(2);
                 done();
             }
         });
