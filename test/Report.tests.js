@@ -4,11 +4,11 @@ var Base = require('./BaseTest');
 
 describe('Report test', function() {
     var client;
+    this.timeout(30000);
     before(function () {
         client = JPush.buildClient(Base.appKey, Base.masterSecret);
     });
     after(function () {});
-
     it('report test1', function(done) {
         client.getReportReceiveds('1083691241', function(err, res) {
             if (!err && res) {

@@ -4,7 +4,6 @@ exports.ALERT = "JPush Test - alert";
 exports.TITLE = "JPush Test - title";
 exports.MSG_CONTENT = "JPush Test - msg content";
 exports.TAG1 = "tag1";
-exports.TAG1 = "tag1";
 exports.TAG2 = "tag2";
 exports.TAG_ALL = "tag_all";
 exports.TAG_NO = "tag_no";
