@@ -25,7 +25,7 @@ client.updateDeviceTagAlias('0900e8d85ef', 'alias1', false, tagsToAdd, tagsToRem
             console.log(err.message);
         }
     } else {
-        console.log("updateDeviceTagAlias :");
+        console.log("updateDeviceTagAlias :" + res);
         console.log('success');
     }
 });
