@@ -11,7 +11,7 @@ describe('device test', function() {
     after(function() {
     });
 
-/*    it('test updateDeviceTagAlias', function(done) {
+    it('test updateDeviceTagAlias', function(done) {
 
         tagsToAdd = [ 'tag1', 'tag2' ];
         tagsToRemove = [ 'tag3', 'tag4' ];
@@ -24,8 +24,6 @@ describe('device test', function() {
                 });
     });
 
-    
-
     it('test getTagList', function(done) {
 
         client.getTagList(function(err, res) {
@@ -37,12 +35,12 @@ describe('device test', function() {
         });
     });
 
-    it('test isDeviceInTag', function(done) {
+    it('test getAliasDeviceList_1', function(done) {
 
-        client.isDeviceInTag('tag6', '0900e8d85ef', function(err, res) {
+        client.getAliasDeviceList('alias1', null, function(err, res) {
             if (!err && res) {
-                console.log('asdasdasdasdasd' + res)
-                assert.equal(res['result'], false, 'response error')
+                assert.ok(res.registration_ids[0] == '0900e8d85ef',
+                        'response error')
                 done();
             }
         });
@@ -51,8 +49,8 @@ describe('device test', function() {
     it('test addRemoveDevicesFromTag', function(done) {
 
         toAddUsers = [ '0900e8d85ef' ];
-        toRemoveUsers = [ '0900e8d85ef' ];
-        client.addRemoveDevicesFromTag('tag1', toAddUsers, toRemoveUsers,
+        toRemoveUsers = [ '0a04ad7d8b4' ];
+        client.addRemoveDevicesFromTag('tag4', toAddUsers, toRemoveUsers,
                 function(err, res) {
                     if (!err && res) {
                         assert.equal(res, 200, 'response error')
@@ -61,8 +59,43 @@ describe('device test', function() {
                 });
     });
 
-    it('test deleteTag', function(done) {
+    it('test isDeviceInTag_1', function(done) {
 
+        client.isDeviceInTag('tag4', '0900e8d85ef', function(err, res) {
+            if (!err && res) {
+                console.log('got result' + res)
+                assert.equal(res['result'], true, 'response error')
+                done();
+            }
+        });
+    });
+
+    it('test isDeviceInTag_2', function(done) {
+
+        client.isDeviceInTag('tag4', '0a04ad7d8b4', function(err, res) {
+            if (!err && res) {
+                console.log('got result' + res)
+                assert.equal(res['result'], false, 'response error')
+                done();
+            }
+        });
+    });
+
+    it('test getTagList', function(done) {
+
+        client.getTagList(function(err, res) {
+            console.log('got resultasdasdasd' + res.tags)
+            var flag = false;
+            if (!err && res) {
+               
+                console.log('got resultasdasdasd' + flag)
+                assert.ok(res.tags[0] == 'tag4' , 'response error')
+                done();
+            }
+        });
+    });
+
+    it('test deleteTag', function(done) {
         client.deleteTag('tag4', null, function(err, res) {
             if (!err && res) {
                 assert.equal(res, 200, 'response error')
@@ -90,7 +123,7 @@ describe('device test', function() {
             }
         });
     });
-    
+
     it('test updateDeviceTagAlias', function(done) {
 
         tagsToAdd = [ 'tag1', 'tag2' ];
@@ -102,8 +135,8 @@ describe('device test', function() {
                         done();
                     }
                 });
-    });*/
-    
+    });
+
     it('test getDeviceTagAlias', function(done) {
         client.getDeviceTagAlias('0900e8d85ef', function(err, res) {
             if (err) {
@@ -113,8 +146,9 @@ describe('device test', function() {
                     console.log(err.message);
                 }
             } else {
-              tag = ["tag1","tag2"];
-              assert.equal(res.tags.sort().toString(), tag.sort().toString(), 'response error')
+                tag = [ "tag1", "tag2" ];
+                assert.equal(res.tags.sort().toString(), tag.sort().toString(),
+                        'response error')
                 done();
             }
         });
