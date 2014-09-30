@@ -83,7 +83,7 @@ client.deleteTag('tag4', null, function(err, res) {
 setTimeout(function() {
 client.getAliasDeviceList('alias1', null, function(err, res) {
     if (!err && res) {
-        should(res).be.ok;
+        assert.ok(res.registration_ids != undefined, 'response error')
 
     }
 }) }, oneSecond * 8);
