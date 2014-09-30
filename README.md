@@ -89,7 +89,7 @@ client.getReportReceiveds('746522674,344076897', function(err, res) {
 ### 单元测试
 在程序根目录下执行 
 ```
-mocha test
+mocha test 
 ```
 
 
