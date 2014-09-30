@@ -67,7 +67,7 @@ setTimeout(function() {
 client.getTagList(function(err, res) {
     console.log('got resultasdasdasd' + res.tags)
     if (!err && res) {
-        assert.ok(res.tags[0] == 'tag4', 'response error')
+        assert.ok(res.tags[0] != undefined, 'response error')
 
     }
 })  }, oneSecond * 6);
