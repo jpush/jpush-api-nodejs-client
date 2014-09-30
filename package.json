@@ -22,7 +22,7 @@
     "mocha": "~1.12.1",
     "should": "~1.2.2",
     "faker-zh-cn": "~0.5.8"
-    "assert": "~1.1.2"
+    "assert": "1.1.2"
   },
   "homepage": "https://www.jpush.cn/",
   "repository": {
