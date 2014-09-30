@@ -66,11 +66,8 @@ client.isDeviceInTag('tag4', '0a04ad7d8b4', function(err, res) {
 setTimeout(function() {
 client.getTagList(function(err, res) {
     console.log('got resultasdasdasd' + res.tags)
-    var flag = false;
     if (!err && res) {
-
-        console.log('got resultasdasdasd' + flag)
-        assert.ok(res.tags[0] == 'tag4', 'response error')
+        assert.ok(res.tags[0] == 'tag5', 'response error')
 
     }
 })  }, oneSecond * 6);
