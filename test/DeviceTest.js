@@ -3,7 +3,7 @@ var JPush = require('../index');
 var Base = require('./BaseTest');
 var assert = require('assert');
 
-var client = JPush.buildClient(Base.appKey, Base.masterSecret);
+var client = JPush.buildClient('dd1066407b044738b6479275', '6b135be0037a5c1e693c3dfa');
 var oneSecond = 800;
 
 var tagsToAdd = [ 'tag1', 'tag2' ];

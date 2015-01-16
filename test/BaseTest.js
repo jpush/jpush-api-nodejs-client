@@ -1,5 +1,5 @@
 exports.appKey = 'dd1066407b044738b6479275';
-exports.masterSecret = "2b38ce69b1de2a7fa95706ea";
+exports.masterSecret = "6b135be0037a5c1e693c3dfa";
 exports.ALERT = "JPush Test - alert";
 exports.TITLE = "JPush Test - title";
 exports.MSG_CONTENT = "JPush Test - msg content";

@@ -6,7 +6,7 @@ describe('report received test1', function() {
     var client;
     this.timeout(30000);
     before(function () {
-        client = JPush.buildClient(Base.appKey, Base.masterSecret);
+        client = JPush.buildClient('e5c0d34f58732cf09b2d4d74', '4cdda6d3c8b029941dbc5cb3');
     });
     after(function () {});
     it('report received test1', function(done) {

@@ -93,7 +93,7 @@ describe('Push test', function() {
 				});
 
 	});
-	it('Push tag_and more test', function(done) {
+/*	it('Push tag_and more test', function(done) {
 
 		client.push().setPlatform(JPush.ALL).setAudience(
 				JPush.tag_and(Base.TAG1, Base.TAG_ALL)).setNotification(
@@ -103,7 +103,7 @@ describe('Push test', function() {
 			}
 		});
 
-	});
+	});*/
 	it('Push registration_id test', function(done) {
 
 		client.push().setPlatform(JPush.ALL).setAudience(
