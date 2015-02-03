@@ -29,7 +29,7 @@ setTimeout(function() {
 setTimeout(function() {
 client.getAliasDeviceList('alias1', null, function(err, res) {
     if (!err && res) {
-        assert.ok(res.registration_ids[0] == '0900e8d85ef', 'response error')
+        assert.ok(res.registration_ids[0] == '0a04ad7d8b4', 'response error')
 
     }
 }) }, oneSecond * 2);
