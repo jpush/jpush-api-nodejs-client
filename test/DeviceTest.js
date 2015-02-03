@@ -116,7 +116,7 @@ client.getDeviceTagAlias('0900e8d85ef', function(err, res) {
             console.log(err.message);
         }
     } else {
-        tag = ["555", "gggg", "tag1", "tag2"];
+        tag = ["tag_all", "tag1", "tag2"];
 		console.log(res);
         assert.equal(res.tags.sort().toString(), tag.sort().toString(),
                 'response error')
