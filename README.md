@@ -88,7 +88,7 @@ client.getReportReceiveds('746522674,344076897', function(err, res) {
 
 ### 关闭Log
 
-```
+```js
 // 在构建JPushClient对象的时候, 指定isDebug参数
 var client = JPush.buildClient({
     appKey:'47a3ddda34b2602fa9e17c01',
