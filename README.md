@@ -86,6 +86,19 @@ client.getReportReceiveds('746522674,344076897', function(err, res) {
 });
 ```
 
+### 关闭Log
+
+```
+// 在构建JPushClient对象的时候, 指定isDebug参数
+var client = JPush.buildClient({
+    appKey:'47a3ddda34b2602fa9e17c01',
+    masterSecret:'d94f733358cca97b18b2cb98',
+    isDebug:false
+});
+// or
+var client = JPush.buildClient('47a3ddda34b2602fa9e17c01', 'd94f733358cca97b18b2cb98', null, false);
+```
+
 ### 单元测试
 在程序根目录下执行 
 ```
