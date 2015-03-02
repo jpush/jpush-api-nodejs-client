@@ -258,7 +258,7 @@ describe('PushPayload test', function() {
     it ("ios length validate fail test", function(done) {
         var isVaildate = client.push().setPlatform(JPush.ALL)
             .setAudience(JPush.ALL)
-            .setNotification(JPush.ios(Base.tooBig220))
+            .setNotification(JPush.ios(Base.tooBig2000))
             .isIosExceedLength();
 
        isVaildate.should.equal(true);
@@ -277,7 +277,7 @@ describe('PushPayload test', function() {
     it ("ios length validate fail1 test", function(done) {
         var isVaildate = client.push().setPlatform(JPush.ALL)
             .setAudience(JPush.ALL)
-            .setNotification(JPush.ios(Base.tooBig220))
+            .setNotification(JPush.ios(Base.tooBig2000))
             .isGlobalExceedLength();
 
         isVaildate.should.equal(true);
