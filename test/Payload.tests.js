@@ -39,6 +39,27 @@ describe('PushPayload test', function() {
         done();
     });
 
+
+    it("should set `big_push_duration`", function (done) {
+      var json = {
+        options: {
+          sendno: 123456,
+          apns_production: false,
+          big_push_duration: 60
+        },
+        platform: ['ios', 'winphone']
+      };
+
+      var result = JSON.stringify(json);
+
+      var payload = client.push()
+        .setPlatform('ios', 'winphone')
+        .setOptions(123456, null, null, false, 60);
+
+      payload.toJSON().should.equal(result);
+      done();
+    });
+
     it('platform test3', function(done) {
         var json = {
             options : {
