@@ -20,7 +20,7 @@ client.push().setPlatform(JPush.ALL)
         }
     });
 
-//full push
+//full push .
 
 client.push().setPlatform('ios', 'android')
     .setAudience(JPush.tag('555', '666'), JPush.alias('666,777'))
