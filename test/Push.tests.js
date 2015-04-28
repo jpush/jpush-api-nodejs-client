@@ -29,7 +29,8 @@ describe('Push test', function() {
 				});
 
 	});
-	it('Push platform test1', function(done) {
+
+	it('Push platform test2', function(done) {
 
 		client.push().setPlatform('android', 'ios', 'winphone').setAudience(
 				JPush.ALL).setNotification(Base.ALERT).send(function(err, res) {

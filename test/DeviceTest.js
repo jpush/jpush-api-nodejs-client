@@ -108,18 +108,19 @@ client.updateDeviceTagAlias('0900e8d85ef', 'alias1', false, tagsToAdd,
         }) }, oneSecond * 10);
 
 setTimeout(function() {
-client.getDeviceTagAlias('0900e8d85ef', function(err, res) {
-    if (err) {
-        if (err instanceof JPush.APIConnectionError) {
-            console.log(err.message);
-        } else if (err instanceof JPush.APIRequestError) {
-            console.log(err.message);
-        }
-    } else {
-        tag = ["tag_all", "tag1", "tag2"];
-		console.log(res);
-        assert.equal(res.tags.sort().toString(), tag.sort().toString(),
-                'response error')
 
-    }
-}) }, oneSecond * 11);
+    client.getDeviceTagAlias('0900e8d85ef', function(err, res) {
+        if (err) {
+            if (err instanceof JPush.APIConnectionError) {
+                console.log(err.message);
+            } else if (err instanceof JPush.APIRequestError) {
+                console.log(err.message);
+            }
+        } else {
+            tag = ["tag_all", "tag1", "tag2", "Tag1","svip","test1"];
+            console.log(res);
+            assert.equal(res.tags.sort().toString(), tag.sort().toString(), 'response error')
+
+        }
+    })
+}, oneSecond * 11);
