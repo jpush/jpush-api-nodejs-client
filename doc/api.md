@@ -140,7 +140,7 @@ JPush API Client，调用该类的实例执行对JPush API的请求
 |setAudience|设置audience,本方法接收 `JPush.ALL`，或者是`tag()`,  `tag_and()`, `alias()`, `registration_id()` 创建的对象，具体可参考Audience示例|
 |setNotification|设置notification，本方法接收 `ios()`, `android()`, `winphone()`等方法创建的对象，如果第一个参数为字符串，则指定全局的alert，具体可参考Notification示例|
 |setMessage|设置message，本方法接受4个参数`msg_content(string,必填)`, `title(string)`, `content_type(string)`, `extras(Object)`|
-|setOptions|设置options,本方法接收4个参数，`sendno(int)`, `timeToLive(int)`, `overrideMsgId(int)`, `apnsProduction(boolean)`|
+|setOptions|设置options,本方法接收5个参数，`sendno(int)`, `time_to_live(int)`, `override_msg_id(int)`, `apns_production(boolean)`, `big_push_duration(int)`|
 |toJSON|将当前payload对象转换为json字符串|
 |send|推送当前payload对象| 
 |isIosExceedLength|检测当前payload是否超出ios notification长度限定。返回true/false。（ios notification不超过220并且ios notification + message不超过1200）|
