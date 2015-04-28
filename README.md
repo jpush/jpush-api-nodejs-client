@@ -100,7 +100,8 @@ var client = JPush.buildClient('47a3ddda34b2602fa9e17c01', 'd94f733358cca97b18b2
 ```
 
 ### 单元测试
-在程序根目录下执行 
+
+在程序根目录下执行.
 ```
 mocha test 
 ```
