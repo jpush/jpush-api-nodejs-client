@@ -3,11 +3,14 @@ var JPush = require('../index');
 var Base = require('./BaseTest');
 var assert = require('assert');
 
-var client = JPush.buildClient('dd1066407b044738b6479275', '6b135be0037a5c1e693c3dfa');
+var client = JPush.buildClient(Base.appKey, Base.masterSecret);
 var oneSecond = 800;
 
 var tagsToAdd = [ 'tag1', 'tag2' ];
 var tagsToRemove = [ 'tag3', 'tag4' ];
+
+
+
 client.updateDeviceTagAlias('0900e8d85ef', 'alias1', false, tagsToAdd,
         tagsToRemove, function(err, res) {
             if (!err && res) {
@@ -117,7 +120,7 @@ setTimeout(function() {
                 console.log(err.message);
             }
         } else {
-            tag = ["tag_all", "tag1", "tag2", "Tag1","svip","test1"];
+            tag = ["tag1", "tag2", "tag_all"];
             console.log(res);
             assert.equal(res.tags.sort().toString(), tag.sort().toString(), 'response error')
 

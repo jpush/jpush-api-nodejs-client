@@ -1,6 +1,7 @@
 var should = require('should');
 var JPush = require('../index');
 var Base = require('./BaseTest');
+
 describe('Push test', function() {
 	var client;
 	this.timeout(30000);
