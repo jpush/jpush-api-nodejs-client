@@ -1,6 +1,6 @@
-var JPush = require("../lib/JPush/JPush.js");
+var JPush = require("jpush-sdk");
 
-var client = JPush.buildClient('47a3ddda34b2602fa9e17c01', 'd94f733358cca97b18b2cb98');
+var client = JPush.buildClient('dd1066407b044738b6479275', '6b135be0037a5c1e693c3dfa');
 
 client.getDeviceTagAlias('0900e8d85ef', function(err, res) {
     if (err) {
