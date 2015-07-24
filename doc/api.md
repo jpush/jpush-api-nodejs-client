@@ -183,4 +183,4 @@ client.push().setNotification(
 
 
   [1]: http://docs.jpush.cn/display/dev/Push-API-v3
-  [2]: .../example/PushExample.js
+  [2]: https://github.com/jpush/jpush-api-nodejs-client/blob/master/examples/PushExample.js
