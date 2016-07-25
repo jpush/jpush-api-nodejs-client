@@ -139,10 +139,19 @@ JPush API Client，调用该类的实例执行对JPush API的请求
 |setPlatform|设置platform,本方法接收 `JPush.ALL`, `android`, `ios`, `android`这几个参数.具体使用可参考 Platform示例 |
 |setAudience|设置audience,本方法接收 `JPush.ALL`，或者是`tag()`,  `tag_and()`, `alias()`, `registration_id()` 创建的对象，具体可参考Audience示例|
 |setNotification|设置notification，本方法接收 `ios()`, `android()`, `winphone()`等方法创建的对象，如果第一个参数为字符串，则指定全局的alert，具体可参考Notification示例|
+<<<<<<< HEAD
 |setMessage|设置message，本方法接受4个参数`msg_content(string,必填)`, `title(string)`, `content_type(string)`, `extras(Array)`|
 |setOptions|设置options,本方法接收4个参数，`sendno(int)`, `timeToLive(int)`, `overrideMsgId(int)`, `apnsProduction(boolean)`|
 |toJSON|将当前payload对象转换为json字符串|
 |send|推送当前payload对象| 
+=======
+|setMessage|设置message，本方法接受4个参数`msg_content(string,必填)`, `title(string)`, `content_type(string)`, `extras(Object)`|
+|setOptions|设置options,本方法接收5个参数，`sendno(int)`, `time_to_live(int)`, `override_msg_id(int)`, `apns_production(boolean)`, `big_push_duration(int)`|
+|toJSON|将当前payload对象转换为json字符串|
+|send|推送当前payload对象| 
+|isIosExceedLength|检测当前payload是否超出ios notification长度限定。返回true/false。（ios notification不超过220并且ios notification + message不超过1200）|
+|isGlobalExceedLength|检测当前payload是否超出长度限定。返回true/false。（ios notification不超过220并且所有平台的notification + message不超过1200）
+>>>>>>> master
 
 开发者可以参考 [推送示例][2] 快速了解推送细节
 
@@ -181,4 +190,8 @@ client.push().setNotification(
 
 
   [1]: http://docs.jpush.cn/display/dev/Push-API-v3
+<<<<<<< HEAD
   [2]: .../example/PushExample.js
+=======
+  [2]: https://github.com/jpush/jpush-api-nodejs-client/blob/master/examples/PushExample.js
+>>>>>>> master

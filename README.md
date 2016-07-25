@@ -1,4 +1,10 @@
+<<<<<<< HEAD
 JPush API client library for NodeJS
+=======
+[![Build Status](https://travis-ci.org/jpush/jpush-api-nodejs-client.svg?branch=master)](https://travis-ci.org/jpush/jpush-api-nodejs-client)
+
+# JPush API client library for Node.js
+>>>>>>> master
 
 ## 概述
 本SDK提供JPush服务端接口的Node封装，与 JPush Rest API 组件通信。使用时引用该模块即可，可参考附带Demo学习使用方法。
@@ -8,7 +14,15 @@ JPush API client library for NodeJS
 
 
 ## Install
-尽请期待
+```
+npm install jpush-sdk
+#or
+{
+    "dependencies": {
+        "jpush-sdk": "*"
+    }
+}
+```
 
 
 ## Example
@@ -76,10 +90,24 @@ client.getReportReceiveds('746522674,344076897', function(err, res) {
 });
 ```
 
-### 单元测试
-在程序根目录下执行 
+### 关闭Log
+
+```js
+// 在构建JPushClient对象的时候, 指定isDebug参数
+var client = JPush.buildClient({
+    appKey:'47a3ddda34b2602fa9e17c01',
+    masterSecret:'d94f733358cca97b18b2cb98',
+    isDebug:false
+});
+// or
+var client = JPush.buildClient('47a3ddda34b2602fa9e17c01', 'd94f733358cca97b18b2cb98', null, false);
 ```
-mocha test
+
+### 单元测试
+
+在程序根目录下执行.
+```
+mocha test 
 ```
 
 

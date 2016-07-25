@@ -39,6 +39,30 @@ describe('PushPayload test', function() {
         done();
     });
 
+<<<<<<< HEAD
+=======
+
+    it("should set `big_push_duration`", function (done) {
+      var json = {
+        options: {
+          sendno: 123456,
+          apns_production: false,
+          big_push_duration: 60
+        },
+        platform: ['ios', 'winphone']
+      };
+
+      var result = JSON.stringify(json);
+
+      var payload = client.push()
+        .setPlatform('ios', 'winphone')
+        .setOptions(123456, null, null, false, 60);
+
+      payload.toJSON().should.equal(result);
+      done();
+    });
+
+>>>>>>> master
     it('platform test3', function(done) {
         var json = {
             options : {
@@ -254,4 +278,55 @@ describe('PushPayload test', function() {
         done();
     });
 
+<<<<<<< HEAD
 });
+=======
+
+    it ("ios length validate fail test", function(done) {
+        var isVaildate = client.push().setPlatform(JPush.ALL)
+            .setAudience(JPush.ALL)
+            .setNotification(JPush.ios(Base.tooBig2000))
+            .isIosExceedLength();
+
+       isVaildate.should.equal(true);
+       done();
+    });
+
+    it ("ios length validate success test", function(done) {
+        var isVaildate = client.push().setPlatform(JPush.ALL)
+            .setAudience(JPush.ALL)
+            .setNotification(JPush.ios(Base.ALERT))
+            .isIosExceedLength();
+
+        isVaildate.should.equal(false);
+        done();
+    });
+    it ("ios length validate fail1 test", function(done) {
+        var isVaildate = client.push().setPlatform(JPush.ALL)
+            .setAudience(JPush.ALL)
+            .setNotification(JPush.ios(Base.tooBig2000))
+            .isGlobalExceedLength();
+
+        isVaildate.should.equal(true);
+        done();
+    });
+    it ("ios length validate fail2 test", function(done) {
+        var isVaildate = client.push().setPlatform(JPush.ALL)
+            .setAudience(JPush.ALL)
+            .setNotification(Base.tooBig1200, JPush.ios(Base.ALERT))
+            .isGlobalExceedLength();
+
+        isVaildate.should.equal(true);
+        done();
+    });
+    it ("ios length validate success test", function(done) {
+        var isVaildate = client.push().setPlatform(JPush.ALL)
+            .setAudience(JPush.ALL)
+            .setNotification(Base.ALERT, JPush.ios(Base.ALERT))
+            .isGlobalExceedLength();
+
+        isVaildate.should.equal(false);
+        done();
+    });
+});
+>>>>>>> master

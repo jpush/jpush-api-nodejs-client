@@ -1,11 +1,23 @@
+<<<<<<< HEAD
 var JPush = require("../lib/JPush/JPush.js");
 
 var client = JPush.buildClient('47a3ddda34b2602fa9e17c01', 'd94f733358cca97b18b2cb98');
+=======
+var JPush = require("jpush-sdk");
+
+var client = JPush.buildClient('dd1066407b044738b6479275', '6b135be0037a5c1e693c3dfa');
+
+>>>>>>> master
 
 client.getReportReceiveds('746522674,344076897', function(err, res) {
     if (err) {
         if (err instanceof JPush.APIConnectionError) {
             console.log(err.message);
+<<<<<<< HEAD
+=======
+            //Response Timeout means your request to the server may have already received, please check whether or not to push
+            console.log(err.isResponseTimeout);
+>>>>>>> master
         } else if (err instanceof  JPush.APIRequestError) {
             console.log(err.message);
         }
