@@ -9,8 +9,6 @@ var oneSecond = 800;
 var tagsToAdd = [ 'tag1', 'tag2' ];
 var tagsToRemove = [ 'tag3', 'tag4' ];
 
-
-
 client.updateDeviceTagAlias('0900e8d85ef', 'alias1', false, tagsToAdd,
         tagsToRemove, function(err, res) {
             if (!err && res) {

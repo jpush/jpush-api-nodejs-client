@@ -39,30 +39,6 @@ describe('PushPayload test', function() {
         done();
     });
 
-<<<<<<< HEAD
-=======
-
-    it("should set `big_push_duration`", function (done) {
-      var json = {
-        options: {
-          sendno: 123456,
-          apns_production: false,
-          big_push_duration: 60
-        },
-        platform: ['ios', 'winphone']
-      };
-
-      var result = JSON.stringify(json);
-
-      var payload = client.push()
-        .setPlatform('ios', 'winphone')
-        .setOptions(123456, null, null, false, 60);
-
-      payload.toJSON().should.equal(result);
-      done();
-    });
-
->>>>>>> master
     it('platform test3', function(done) {
         var json = {
             options : {
@@ -91,7 +67,6 @@ describe('PushPayload test', function() {
         var payload = client.push().setAudience(JPush.ALL).setOptions(123456);
         payload.toJSON().should.equal(result);
         done();
-
     });
 
     it('audience test2', function(done) {
@@ -117,7 +92,6 @@ describe('PushPayload test', function() {
         ).setOptions(123456);
         payload.toJSON().should.equal(result);
         done();
-
     });
 
     it('audience test2', function(done) {
@@ -143,7 +117,6 @@ describe('PushPayload test', function() {
         ).setOptions(123456);
         payload.toJSON().should.equal(result);
         done();
-
     });
 
     it('message test1', function(done) {
@@ -178,7 +151,8 @@ describe('PushPayload test', function() {
         };
         var result = JSON.stringify(json);
 
-        var payload = client.push().setMessage('msg content', 'msg title', 'content type', Base.EXTRAS).setOptions(123456);
+        var payload = client.push().setMessage('msg content', 'msg title', 'content type', Base.EXTRAS)
+          .setOptions(123456);
         payload.toJSON().should.equal(result);
         done();
     });
@@ -233,7 +207,8 @@ describe('PushPayload test', function() {
         };
         var result = JSON.stringify(json);
 
-        var payload = client.push().setNotification(Base.ALERT, JPush.ios(Base.ALERT, 'happy', 5)).setOptions(123456);
+        var payload = client.push().setNotification(Base.ALERT, JPush.ios(Base.ALERT, 'happy', 5))
+          .setOptions(123456);
         payload.toJSON().should.equal(result);
         done();
     });
@@ -278,10 +253,6 @@ describe('PushPayload test', function() {
         done();
     });
 
-<<<<<<< HEAD
-});
-=======
-
     it ("ios length validate fail test", function(done) {
         var isVaildate = client.push().setPlatform(JPush.ALL)
             .setAudience(JPush.ALL)
@@ -301,6 +272,7 @@ describe('PushPayload test', function() {
         isVaildate.should.equal(false);
         done();
     });
+
     it ("ios length validate fail1 test", function(done) {
         var isVaildate = client.push().setPlatform(JPush.ALL)
             .setAudience(JPush.ALL)
@@ -310,6 +282,7 @@ describe('PushPayload test', function() {
         isVaildate.should.equal(true);
         done();
     });
+
     it ("ios length validate fail2 test", function(done) {
         var isVaildate = client.push().setPlatform(JPush.ALL)
             .setAudience(JPush.ALL)
@@ -319,6 +292,7 @@ describe('PushPayload test', function() {
         isVaildate.should.equal(true);
         done();
     });
+
     it ("ios length validate success test", function(done) {
         var isVaildate = client.push().setPlatform(JPush.ALL)
             .setAudience(JPush.ALL)
@@ -329,4 +303,3 @@ describe('PushPayload test', function() {
         done();
     });
 });
->>>>>>> master
