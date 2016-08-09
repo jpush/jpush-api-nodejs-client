@@ -1,6 +1,6 @@
 var JPush = require('jpush-sdk')
 
-var client = JPush.buildClient('dd1066407b044738b6479275', '6b135be0037a5c1e693c3dfa')
+var client = JPush.buildClient('a1703c14b186a68a66ef86c1', '9dabdf8bb704b421759cb49c')
 
 client.getDeviceTagAlias('0900e8d85ef', function (err, res) {
   if (err) {
@@ -19,7 +19,7 @@ client.getDeviceTagAlias('0900e8d85ef', function (err, res) {
 tagsToAdd = ['tag1', 'tag2']
 tagsToRemove = ['tag3', 'tag4']
 
-client.updateDeviceTagAlias('0900e8d85ef', 'alias1', false, tagsToAdd, tagsToRemove,
+client.updateDeviceTagAlias('171976fa8a8085fcdba', 'alias1', false, tagsToAdd, [],
  function (err, res) {
    if (err) {
      if (err instanceof JPush.APIConnectionError) {
@@ -46,22 +46,10 @@ client.getTagList(function (err, res) {
   }
 })
 
-client.isDeviceInTag('tag3', '0900e8d85ef', function (err, res) {
-  if (err) {
-    if (err instanceof JPush.APIConnectionError) {
-      console.log(err.message)
-    } else if (err instanceof JPush.APIRequestError) {
-      console.log(err.message)
-    }
-  } else {
-    console.log('isDeviceInTag :')
-    console.log('got result:' + res['result'])
-  }
-})
+toAddUsers = ['18071adc030dd6faa56', '171976fa8a8085fcdba']
+toRemoveUsers = ['171976fa8a8085fcdba']
 
-toAddUsers = ['0900e8d85ef']
-toRemoveUsers = ['0900e8d85ef']
-client.addRemoveDevicesFromTag('tag1', toAddUsers, toRemoveUsers,
+client.addRemoveDevicesFromTag('tagtag', toAddUsers, toRemoveUsers,
   function (err, res) {
     if (err) {
       if (err instanceof JPush.APIConnectionError) {
@@ -73,6 +61,19 @@ client.addRemoveDevicesFromTag('tag1', toAddUsers, toRemoveUsers,
       console.log('success')
     }
   })
+
+client.isDeviceInTag('tagtag', '171976fa8a8085fcdba', function (err, res) {
+  if (err) {
+    if (err instanceof JPush.APIConnectionError) {
+      console.log(err.message)
+    } else if (err instanceof JPush.APIRequestError) {
+      console.log(err.message)
+    }
+  } else {
+    console.log('isDeviceInTag :')
+    console.log('got result:' + res['result'])
+  }
+})
 
 client.deleteTag('tag1', null, function (err, res) {
   if (err) {

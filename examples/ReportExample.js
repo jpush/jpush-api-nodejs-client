@@ -1,6 +1,6 @@
 var JPush = require('jpush-sdk')
 
-var client = JPush.buildClient('dd1066407b044738b6479275', '6b135be0037a5c1e693c3dfa')
+var client = JPush.buildClient('96261ea4bcaae3f4a167a495', 'db1abbffbb619458b7785164')
 
 client.getReportReceiveds('746522674,344076897', function (err, res) {
   if (err) {
