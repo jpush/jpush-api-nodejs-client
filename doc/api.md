@@ -102,7 +102,7 @@ JPush Client API，调用该类的实例执行对 JPush API 的请求。
 |字段名|类型|说明|
 |-----|-----|-----|
 |sendno|int|纯粹用来作为 API 调用标识，API 返回时被原样返回，以方便 API 调用方匹配请求与返回。|
-|msg_id|int|标识每一次推送的唯一的 ID。|
+|msg_id|string|标识每一次推送的唯一的 ID。|
 
 
 #### getReportReceiveds(msg_ids, callback)
@@ -120,7 +120,7 @@ JPush Client API，调用该类的实例执行对 JPush API 的请求。
 |-----|-----|-----|
 |android_received |int|Android 送达。如果无此项数据则为 null。|
 |ios_apns_sent |int| iOS 推送成功。如果无此项数据则为 null。|
-|msg_id|int|该 report 对应的 msg_id。|
+|msg_id|string|该 report 对应的 msg_id。|
 
 #### setSchedule(payload, callback)
 设置指定的定时任务，该方法由 PushPayload.setSchedule() 调用，不需要主动调用此函数。

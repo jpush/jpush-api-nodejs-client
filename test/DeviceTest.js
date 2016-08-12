@@ -51,7 +51,7 @@ setTimeout(function () {
   }) }, oneSecond * 4)
 
 setTimeout(function () {
-  client.isDeviceInTag('tag4', 'REGISTRATION_ID2', function (err, res) {
+  client.isDeviceInTag('tag4', Base.REGISTRATION_ID2, function (err, res) {
     if (!err && res) {
       console.log('got result' + res)
       assert.equal(res['result'], false, 'response error')
