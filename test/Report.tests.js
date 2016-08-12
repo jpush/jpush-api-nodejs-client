@@ -18,6 +18,7 @@ describe('report received test1', function () {
       }
     })
   })
+  
   it('report received test2', function (done) {
     client.getReportReceiveds('1083691241,', function (err, res) {
       if (!err && res) {
@@ -26,6 +27,7 @@ describe('report received test1', function () {
       }
     })
   })
+
   it('report received test3', function (done) {
     client.getReportReceiveds('1083691241,2023215321', function (err, res) {
       if (!err && res) {
@@ -42,6 +44,7 @@ describe('report received test1', function () {
       }
     })
   })
+
   it('report messages test2', function (done) {
     client.getReportMessages('1083691241,', function (err, res) {
       if (!err && res) {
@@ -49,6 +52,7 @@ describe('report received test1', function () {
       }
     })
   })
+
   it('report messages test3', function (done) {
     client.getReportMessages('1083691241,2023215321', function (err, res) {
       if (!err && res) {
@@ -58,21 +62,23 @@ describe('report received test1', function () {
   })
 
   it('report users test1', function (done) {
-    client.getReportUsers('MONTH', '2014-05', 2, function (err, res) {
+    client.getReportUsers('MONTH', '2016-05', 2, function (err, res) {
       if (!err && res) {
         done()
       }
     })
   })
+
   it('report users test2', function (done) {
-    client.getReportUsers('DAY', '2014-05-10', 5, function (err, res) {
+    client.getReportUsers('DAY', '2016-05-10', 5, function (err, res) {
       if (!err && res) {
         done()
       }
     })
   })
+
   it('report users test3', function (done) {
-    client.getReportUsers('HOUR', '2014-05-10 06', 10, function (err, res) {
+    client.getReportUsers('HOUR', '2016-05-10 06', 10, function (err, res) {
       if (!err && res) {
         done()
       }

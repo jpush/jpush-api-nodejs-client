@@ -9,7 +9,7 @@ var oneSecond = 800
 var tagsToAdd = [ 'tag1', 'tag2' ]
 var tagsToRemove = [ 'tag3', 'tag4' ]
 
-client.updateDeviceTagAlias('0900e8d85ef', 'alias1', false, tagsToAdd,
+client.updateDeviceTagAlias(Base.REGISTRATION_ID1, 'alias1', false, tagsToAdd,
   tagsToRemove, function (err, res) {
     if (!err && res) {
       assert.equal(res, 200, 'response error')
@@ -28,13 +28,13 @@ setTimeout(function () {
 setTimeout(function () {
   client.getAliasDeviceList('alias1', null, function (err, res) {
     if (!err && res) {
-      assert.ok(res.registration_ids[0] == '0a04ad7d8b4', 'response error')
+      assert.ok(res.registration_ids[0] == Base.REGISTRATION_ID1, 'response error')
     }
   }) }, oneSecond * 2)
 
 setTimeout(function () {
-  var toAddUsers = [ '0900e8d85ef' ]
-  var toRemoveUsers = [ '0a04ad7d8b4' ]
+  var toAddUsers = [ Base.REGISTRATION_ID1 ]
+  var toRemoveUsers = [ Base.REGISTRATION_ID2 ]
   client.addRemoveDevicesFromTag('tag4', toAddUsers, toRemoveUsers, function (err,
     res) {
     if (!err && res) {
@@ -43,7 +43,7 @@ setTimeout(function () {
   }) }, oneSecond * 3)
 
 setTimeout(function () {
-  client.isDeviceInTag('tag4', '0900e8d85ef', function (err, res) {
+  client.isDeviceInTag('tag4', Base.REGISTRATION_ID1, function (err, res) {
     if (!err && res) {
       console.log('got result' + res)
       assert.equal(res['result'], true, 'response error')
@@ -51,7 +51,7 @@ setTimeout(function () {
   }) }, oneSecond * 4)
 
 setTimeout(function () {
-  client.isDeviceInTag('tag4', '0a04ad7d8b4', function (err, res) {
+  client.isDeviceInTag('tag4', 'REGISTRATION_ID2', function (err, res) {
     if (!err && res) {
       console.log('got result' + res)
       assert.equal(res['result'], false, 'response error')
@@ -90,7 +90,7 @@ setTimeout(function () {
 setTimeout(function () {
   var tagsToAdd = [ 'tag1', 'tag2' ]
   var tagsToRemove = [ 'tag3', 'tag4' ]
-  client.updateDeviceTagAlias('0900e8d85ef', 'alias1', false, tagsToAdd,
+  client.updateDeviceTagAlias(Base.REGISTRATION_ID1, 'alias1', false, tagsToAdd,
     tagsToRemove, function (err, res) {
       if (!err && res) {
         assert.equal(res, 200, 'response error')
@@ -98,7 +98,7 @@ setTimeout(function () {
     }) }, oneSecond * 10)
 
 setTimeout(function () {
-  client.getDeviceTagAlias('0900e8d85ef', function (err, res) {
+  client.getDeviceTagAlias(Base.REGISTRATION_ID2, function (err, res) {
     if (err) {
       if (err instanceof JPush.APIConnectionError) {
         console.log(err.message)
