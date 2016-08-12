@@ -134,8 +134,7 @@ describe('Push test', function () {
 
   it('Push android full', function (done) {
     client.push().setPlatform(JPush.ALL).setAudience(JPush.ALL)
-      .setNotification(
-        JPush.android(Base.ALERT, Base.TITLE, 1, Base.EXTRAS))
+      .setNotification(JPush.android(Base.ALERT, Base.TITLE, 1, Base.EXTRAS))
       .send(function (err, res) {
         if (!err && res) {
           done()
@@ -143,52 +142,52 @@ describe('Push test', function () {
       })
   })
 
-  it('Push ios', function (done) {
-    client.push().setPlatform(JPush.ALL).setAudience(JPush.ALL)
-      .setNotification(JPush.ios(Base.ALERT)).send(
-      function (err, res) {
-        if (!err && res) {
-          done()
-        }
-      })
-  })
+  // it('Push ios', function (done) {
+  //   client.push().setPlatform(JPush.ALL).setAudience(JPush.ALL)
+  //     .setNotification(JPush.ios(Base.ALERT)).send(
+  //     function (err, res) {
+  //       if (!err && res) {
+  //         done()
+  //       }
+  //     })
+  // })
 
-  it('Push ios full', function (done) {
-    client.push().setPlatform(JPush.ALL).setAudience(JPush.ALL)
-      .setNotification(
-        JPush.ios(Base.ALERT, 'sound', 5, true, Base.EXTRAS))
-      .send(function (err, res) {
-        if (!err && res) {
-          done()
-        }
-      })
-  })
+  // it('Push ios full', function (done) {
+  //   client.push().setPlatform(JPush.ALL).setAudience(JPush.ALL)
+  //     .setNotification(
+  //       JPush.ios(Base.ALERT, 'sound', 5, true, Base.EXTRAS))
+  //     .send(function (err, res) {
+  //       if (!err && res) {
+  //         done()
+  //       }
+  //     })
+  // })
 
-  it('Push winphone', function (done) {
-    client.push().setPlatform(JPush.ALL).setAudience(JPush.ALL)
-      .setNotification(JPush.winphone(Base.ALERT)).send(
-      function (err, res) {
-        if (!err && res) {
-          done()
-        }
-      })
-  })
-
-  it('Push winphone full', function (done) {
-    client.push().setPlatform(JPush.ALL).setAudience(JPush.ALL)
-      .setNotification(
-        JPush.winphone(Base.ALERT, Base.TITLE, 'open page',
-          Base.EXTRAS)).send(function (err, res) {
-      if (!err && res) {
-        done()
-      }
-    })
-  })
+  // it('Push winphone', function (done) {
+  //   client.push().setPlatform(JPush.ALL).setAudience(JPush.ALL)
+  //     .setNotification(JPush.winphone(Base.ALERT)).send(
+  //     function (err, res) {
+  //       if (!err && res) {
+  //         done()
+  //       }
+  //     })
+  // })
+  //
+  // it('Push winphone full', function (done) {
+  //   client.push().setPlatform(JPush.ALL).setAudience(JPush.ALL)
+  //     .setNotification(
+  //       JPush.winphone(Base.ALERT, Base.TITLE, 'open page',
+  //         Base.EXTRAS)).send(function (err, res) {
+  //     if (!err && res) {
+  //       done()
+  //     }
+  //   })
+  // })
 
   // message
   it('Push message test', function (done) {
-    client.push().setPlatform(JPush.ALL).setAudience(JPush.ALL).setMessage(
-      Base.MSG_CONTENT).send(function (err, res) {
+    client.push().setPlatform(JPush.ALL).setAudience(JPush.ALL)
+    .setMessage(Base.MSG_CONTENT).send(function (err, res) {
       if (!err && res) {
         done()
       }
@@ -196,8 +195,8 @@ describe('Push test', function () {
   })
 
   it('Push message test2', function (done) {
-    client.push().setPlatform(JPush.ALL).setAudience(JPush.ALL).setMessage(
-      Base.MSG_CONTENT, Base.TITLE, 'content type', Base.EXTRAS)
+    client.push().setPlatform(JPush.ALL).setAudience(JPush.ALL)
+    .setMessage(Base.MSG_CONTENT, Base.TITLE, 'content type', Base.EXTRAS)
       .send(function (err, res) {
         if (!err && res) {
           done()
@@ -207,8 +206,8 @@ describe('Push test', function () {
 
   it('Push notification and message', function (done) {
     client.push().setPlatform(JPush.ALL).setAudience(JPush.ALL)
-      .setNotification(Base.ALERT).setMessage(Base.MSG_CONTENT).send(
-      function (err, res) {
+      .setNotification(Base.ALERT).setMessage(Base.MSG_CONTENT)
+      .send(function (err, res) {
         if (!err && res) {
           done()
         }

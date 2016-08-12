@@ -98,7 +98,7 @@ setTimeout(function () {
     }) }, oneSecond * 10)
 
 setTimeout(function () {
-  client.getDeviceTagAlias(Base.REGISTRATION_ID2, function (err, res) {
+  client.getDeviceTagAlias(Base.REGISTRATION_ID1, function (err, res) {
     if (err) {
       if (err instanceof JPush.APIConnectionError) {
         console.log(err.message)
@@ -106,8 +106,7 @@ setTimeout(function () {
         console.log(err.message)
       }
     } else {
-      tag = ['tag1', 'tag2', 'tag_all']
-      console.log(res)
+      tag = ['tag1', 'tag2']
       assert.equal(res.tags.sort().toString(), tag.sort().toString(), 'response error')
     }
   })
