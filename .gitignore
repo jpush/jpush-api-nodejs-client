@@ -17,3 +17,4 @@ npm-debug.log
 android/**
 tmp/**
 doxmate-templates/**
+*.DS_Store
