@@ -4,7 +4,7 @@
 
 本 SDK 提供 JPush 服务端接口的 Node 封装，与 JPush Rest API 组件通信。使用时引用该模块即可，可参考附带 Demo 学习使用方法。
 
-[REST API 文档](http://docs.jiguang.cn/server/rest_api_v3_push/)
+[REST API 文档](http://docs.jiguang.cn/jpush/server/push/server_overview/)
 
 [NodeJS API 文档][2]
 
