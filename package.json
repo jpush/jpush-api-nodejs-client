@@ -16,7 +16,8 @@
   "license": "MIT",
   "dependencies": {
     "request": "~2.27.0",
-    "popularcrypto": "0.0.2"
+    "popularcrypto": "0.0.2",
+    "socks5-http-client": "~1.0.2"
   },
   "devDependencies": {
     "mocha": "~1.12.1",
