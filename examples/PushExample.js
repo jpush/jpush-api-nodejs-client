@@ -1,7 +1,7 @@
 var JPush = require('jpush-sdk')
 var client = JPush.buildClient('dd1066407b044738b6479275', '6b135be0037a5c1e693c3dfa')
 
-// easy push
+// easy push.
 client.push().setPlatform(JPush.ALL)
   .setAudience(JPush.ALL)
   .setNotification('Hi, JPush', JPush.ios('ios alert', 'happy', 5))
@@ -18,7 +18,7 @@ client.push().setPlatform(JPush.ALL)
     }
   })
 
-// full push .
+// full push.
 client.push().setPlatform('ios', 'android')
   .setAudience(JPush.tag('555', '666'), JPush.alias('666,777'))
   .setNotification('Hi, JPush', JPush.ios('ios alert'), JPush.android('android alert', null, 1))
