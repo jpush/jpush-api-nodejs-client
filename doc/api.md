@@ -31,7 +31,7 @@
 |category|string|否|无|iOS 8 开始支持，即 APNs payload 中的 'category' 字段。|
 |mutable-content|boolean|否|无|推送的时候携带"mutable-content":true 说明是支持 iOS 10 的 UNNotificationServiceExtension，如果不携带此字段则是普通的 Remote Notification。详情参考：[UNNotificationServiceExtension](https://developer.apple.com/reference/usernotifications/unnotificationserviceextension)|
 
-**android(alert, title, builder_id, extras)**
+**android(alert, title, builder_id, extras, priority, category, style, value)**
 
 |参数|类型|必须|默认值|说明|
 |-----|-----|-----|-----|-----|
@@ -39,6 +39,10 @@
 |title|string|否|无|通知标题。|
 |builder_id|int|否|无|Android SDK 可设置通知栏样式，这里根据样式 ID 来指定该使用哪套样式。|
 |extras|object|否|无|自定义 key / value 信息，以供业务使用。|
+|priority|int|否|无|通知栏展示优先级，默认为0，范围为 -2～2 ，其他值将会被忽略而采用默认。|
+|category|string|否|无|通知栏条目过滤或排序，完全依赖 rom 厂商对 category 的处理策略。|
+|style|int|否|无|通知栏样式类型，默认为0，还有1，2，3可选，用来指定选择哪种通知栏样式，其他值无效。有三种可选分别为 bigText=1，Inbox=2，bigPicture=3。|
+|value|object|否|无|当 style = 1, 为大文本通知栏样式，类型为 string，内容会被通知栏以大文本的形式展示出来。支持 API 16 以上的 rom；<br>当 style = 2，为文本条目通知栏样式，类型为 json 对象，json 的每个 key 对应的 value 会被当作文本条目逐条展示。支持 API 16 以上的 rom；<br>当 style = 3，为大图片通知栏样式，类型为 string，可以是网络图片 url，或本地图片的 path，目前支持.jpg和.png后缀的图片。图片内容会被通知栏以大图片的形式展示出来。如果是 http／https 的url，会自动下载；如果要指定开发者准备的本地图片就填 sdcard 的相对路径。支持 API 16以上的 rom。|
 
 **winphone(alert, title, openPage, extras)**
 
