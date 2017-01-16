@@ -15,7 +15,7 @@
   "author": "jpush",
   "license": "MIT",
   "dependencies": {
-    "request": "~2.27.0",
+    "request": "~2.74.0",
     "popularcrypto": "0.0.2"
   },
   "devDependencies": {
