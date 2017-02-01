@@ -1,6 +1,6 @@
 /**
  * @author: JPush
- * @Date: 14-6-24
- * @version: 3.3.1
+ * @Date: 17-02-01
+ * @version: 3.3.2
  */
 module.exports = require('./lib/JPush/JPush.js')
