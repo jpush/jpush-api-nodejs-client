@@ -1,6 +1,6 @@
 {
   "name": "jpush-sdk",
-  "version": "3.3.3",
+  "version": "3.3.4",
   "description": "JPush's officially supported Node.js client library.",
   "main": "index.js",
   "scripts": {
@@ -16,7 +16,8 @@
   "license": "MIT",
   "dependencies": {
     "request": "~2.79.0",
-    "popularcrypto": "0.0.2"
+    "popularcrypto": "0.0.2",
+    "debug": "2.6.1"
   },
   "devDependencies": {
     "mocha": "~1.12.1",
@@ -24,7 +25,7 @@
     "faker-zh-cn": "~0.5.8",
     "assert": "1.1.2"
   },
-  "homepage": "https://www.jpush.cn/",
+  "homepage": "https://www.jiguang.cn/",
   "repository": {
     "type": "git",
     "url": "git@github.com:jpush/jpush-api-nodejs-client.git"
