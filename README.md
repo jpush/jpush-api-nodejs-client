@@ -96,6 +96,8 @@ var client = JPush.buildClient({
 var client = JPush.buildClient('47a3ddda34b2602fa9e17c01', 'd94f733358cca97b18b2cb98', null, false);
 ```
 
+> 目前使用了 debug 模块来控制日志输出，若要查看 JPush 的相关日志信息，请先配置 DEBUG 环境变量 'jpush'。
+
 ### 单元测试
 
 在程序根目录下执行.
