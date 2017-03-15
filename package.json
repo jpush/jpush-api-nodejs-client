@@ -16,7 +16,6 @@
   "license": "MIT",
   "dependencies": {
     "request": "~2.79.0",
-    "popularcrypto": "0.0.2",
     "debug": "2.6.1"
   },
   "devDependencies": {
