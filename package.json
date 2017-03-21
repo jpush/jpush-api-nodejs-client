@@ -6,6 +6,9 @@
   "scripts": {
     "test": "mocha -t 50000 --reporter spec"
   },
+  "engines": {
+    "node": ">=0.12"
+  },
   "keywords": [
     "jpush",
     "JPush API",
