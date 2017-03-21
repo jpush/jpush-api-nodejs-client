@@ -13,7 +13,7 @@ describe('PushPayload test', function () {
     var json = {
       options: {
         sendno: 123456,
-        apns_production: false
+        apns_production: true
       },
       platform: 'all'
     }
@@ -28,7 +28,7 @@ describe('PushPayload test', function () {
     var json = {
       options: {
         sendno: 123456,
-        apns_production: false
+        apns_production: true
       },
       platform: ['ios', 'winphone']
     }
@@ -43,7 +43,7 @@ describe('PushPayload test', function () {
     var json = {
       options: {
         sendno: 123456,
-        apns_production: false
+        apns_production: true
       },
       platform: ['ios', 'winphone']
     }
@@ -58,7 +58,7 @@ describe('PushPayload test', function () {
     var json = {
       options: {
         sendno: 123456,
-        apns_production: false
+        apns_production: true
       },
       audience: 'all'
     }
@@ -73,7 +73,7 @@ describe('PushPayload test', function () {
     var json = {
       options: {
         sendno: 123456,
-        apns_production: false
+        apns_production: true
       },
       audience: {
         registration_id: ['id1', 'id2'],
@@ -98,7 +98,7 @@ describe('PushPayload test', function () {
     var json = {
       options: {
         sendno: 123456,
-        apns_production: false
+        apns_production: true
       },
       audience: {
         registration_id: ['id1', 'id2'],
@@ -123,7 +123,7 @@ describe('PushPayload test', function () {
     var json = {
       options: {
         sendno: 123456,
-        apns_production: false
+        apns_production: true
       },
       message: {
         msg_content: 'msg content'
@@ -140,7 +140,7 @@ describe('PushPayload test', function () {
     var json = {
       options: {
         sendno: 123456,
-        apns_production: false
+        apns_production: true
       },
       message: {
         msg_content: 'msg content',
@@ -177,7 +177,7 @@ describe('PushPayload test', function () {
     var json = {
       options: {
         sendno: 123456,
-        apns_production: false
+        apns_production: true
       },
       notification: {
         alert: Base.ALERT
@@ -194,7 +194,7 @@ describe('PushPayload test', function () {
     var json = {
       options: {
         sendno: 123456,
-        apns_production: false
+        apns_production: true
       },
       notification: {
         ios: {
@@ -217,7 +217,7 @@ describe('PushPayload test', function () {
     var json = {
       options: {
         sendno: 123456,
-        apns_production: false
+        apns_production: true
       },
       notification: {
         winphone: {

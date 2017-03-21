@@ -1,6 +1,6 @@
 {
   "name": "jpush-sdk",
-  "version": "3.3.5",
+  "version": "3.3.7",
   "description": "JPush's officially supported Node.js client library.",
   "main": "index.js",
   "scripts": {
@@ -16,7 +16,6 @@
   "license": "MIT",
   "dependencies": {
     "request": "~2.79.0",
-    "popularcrypto": "0.0.2",
     "debug": "2.6.1"
   },
   "devDependencies": {
