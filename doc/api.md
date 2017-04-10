@@ -25,8 +25,8 @@
 |-----|-----|-----|-----|-----|
 |alert|string|是|无|通知内容。|
 |sound|string|否|无|如果为 null，则此消息无声音提示；有此字段，如果找到了指定的声音就播放该声音，否则播放默认声音, 如果此字段为空字符串('')，iOS 7 为默认声音，iOS 8 及以上系统为无声音。(消息) 说明：JPush 官方 API Library (SDK) 会默认填充声音字段。提供另外的方法关闭声音。|
-|badge|int|否|1|把角标数字改为指定的数字；为 0 表示清除。|
-|contentAvailable|boolean|否|无|是否静默推送。|
+|badge|int|否|无|如果为 null，表示不改变角标数字；否则把角标数字改为指定的数字；为 0 表示清除。|
+|contentAvailable|boolean|否|无|推送的时候携带 "content-available":true 说明是 Background Remote Notification，如果不携带此字段则是普通的 Remote Notification。详情参考：[Background Remote Notification](http://docs.jiguang.cn/jpush/client/iOS/ios_new_fetures/#ios-7-background-remote-notification)|
 |extras|object|否|无|自定义 key / value 信息，以供业务使用。|
 |category|string|否|无|iOS 8 开始支持，即 APNs payload 中的 'category' 字段。|
 |mutable-content|boolean|否|无|推送的时候携带"mutable-content":true 说明是支持 iOS 10 的 UNNotificationServiceExtension，如果不携带此字段则是普通的 Remote Notification。详情参考：[UNNotificationServiceExtension](https://developer.apple.com/reference/usernotifications/unnotificationserviceextension)|
