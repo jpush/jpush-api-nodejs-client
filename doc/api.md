@@ -24,7 +24,7 @@
 |参数|类型|必须|默认值|说明|
 |-----|-----|-----|-----|-----|
 |alert|string|是|无|通知内容。|
-|sound|string|否|''|通知提示声音，''为默认声音，指定为 JPush.DISABLE_SOUND 不使用提示声。|
+|sound|string|否|无|如果为 null，则此消息无声音提示；有此字段，如果找到了指定的声音就播放该声音，否则播放默认声音, 如果此字段为空字符串('')，iOS 7 为默认声音，iOS 8 及以上系统为无声音。(消息) 说明：JPush 官方 API Library (SDK) 会默认填充声音字段。提供另外的方法关闭声音。|
 |badge|int|否|1|把角标数字改为指定的数字；为 0 表示清除。|
 |contentAvailable|boolean|否|无|是否静默推送。|
 |extras|object|否|无|自定义 key / value 信息，以供业务使用。|
