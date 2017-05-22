@@ -4,7 +4,7 @@
 
 [REST API 文档](http://docs.jiguang.cn/jpush/server/push/server_overview/)
 
-[NodeJS API 文档][2]
+[NodeJS API 文档](/doc/api.md)
 
 
 ## Install
@@ -17,7 +17,6 @@ npm install jpush-sdk
     }
 }
 ```
-
 
 ## Example
 ### Quick start
@@ -42,7 +41,7 @@ client.push().setPlatform(JPush.ALL)
 
 ### Expert mode（高级版）
 
-``` js
+```js
 client.push().setPlatform('ios', 'android')
     .setAudience(JPush.tag('555', '666'), JPush.alias('666,777'))
     .setNotification('Hi, JPush', JPush.ios('ios alert'), JPush.android('android alert', null, 1))
@@ -56,14 +55,13 @@ client.push().setPlatform('ios', 'android')
             console.log('Msg_id: ' + res.msg_id)
         }
     });
-
 ```
 
-关于 Payload 对象的方法，参考[详细 API 文档][4]。
+关于 Payload 对象的方法，参考[详细 API 文档](/doc/api.md)。
 
 ### 获取统计信息
 本 Node lib 简易封装获取统计信息的接口，传入推送 API 返回的 msg_id 列表，多个 msg_id 用逗号隔开，最多支持 100 个 msg_id。  
-更多详细要求，请参考 [Report API 文档][5]。
+更多详细要求，请参考 [Report API 文档](https://docs.jiguang.cn/jpush/server/push/rest_api_v3_report/)。
 
 ```js
 var JPush = require("../lib/JPush/JPush.js");
@@ -97,16 +95,3 @@ var client = JPush.buildClient('47a3ddda34b2602fa9e17c01', 'd94f733358cca97b18b2
 ```
 
 > 目前使用了 debug 模块来控制日志输出，若要查看 JPush 的相关日志信息，请先配置 DEBUG 环境变量 'jpush'。
-
-### 单元测试
-
-在程序根目录下执行.
-```
-mocha test
-```
-
-
-  [2]: doc/api.md
-  [3]: http://docs.jpush.cn/display/dev/Push-API-v3#Push-API-v3-%E6%8E%A8%E9%80%81%E5%AF%B9%E8%B1%A1
-  [4]: doc/api.md
-  [5]: http://docs.jiguang.cn/server/rest_api_v3_report/
