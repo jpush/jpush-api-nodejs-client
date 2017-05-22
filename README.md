@@ -4,7 +4,7 @@
 
 [REST API 文档](http://docs.jiguang.cn/jpush/server/push/server_overview/)
 
-[NodeJS API 文档](/doc/api.md)
+[NodeJS API 文档](https://github.com/jpush/jpush-api-nodejs-client/blob/master/doc/api.md)
 
 
 ## Install
@@ -57,7 +57,7 @@ client.push().setPlatform('ios', 'android')
     });
 ```
 
-关于 Payload 对象的方法，参考[详细 API 文档](/doc/api.md)。
+关于 Payload 对象的方法，参考[详细 API 文档](https://github.com/jpush/jpush-api-nodejs-client/blob/master/doc/api.md)。
 
 ### 获取统计信息
 本 Node lib 简易封装获取统计信息的接口，传入推送 API 返回的 msg_id 列表，多个 msg_id 用逗号隔开，最多支持 100 个 msg_id。  
@@ -75,7 +75,6 @@ client.getReportReceiveds('746522674,344076897', function(err, res) {
             console.log(res[i].android_received)
             console.log(res[i].ios_apns_sent)
             console.log(res[i].msg_id)
-            console.log('------------')
         }
     }
 });
