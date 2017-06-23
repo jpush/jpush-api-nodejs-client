@@ -4,7 +4,8 @@
   "description": "JPush's officially supported Node.js client library.",
   "main": "index.js",
   "scripts": {
-    "test": "mocha -t 50000 --reporter spec"
+    "test": "mocha -t 50000 --reporter spec",
+    "lint": "standard --env=mocha"
   },
   "engines": {
     "node": ">=0.12"
@@ -22,9 +23,10 @@
     "debug": "2.6.1"
   },
   "devDependencies": {
+    "assert": "1.1.2",
     "mocha": "~1.12.1",
     "should": "~1.2.2",
-    "assert": "1.1.2"
+    "standard": "^10.0.2"
   },
   "homepage": "https://www.jiguang.cn/",
   "repository": {

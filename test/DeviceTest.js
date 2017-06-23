@@ -1,4 +1,3 @@
-var should = require('should')
 var JPush = require('../index')
 var Base = require('./BaseTest')
 var assert = require('assert')
@@ -28,9 +27,10 @@ setTimeout(function () {
 setTimeout(function () {
   client.getAliasDeviceList('alias1', null, function (err, res) {
     if (!err && res) {
-      assert.ok(res.registration_ids[0] == Base.REGISTRATION_ID1, 'response error')
+      assert.ok(res.registration_ids[0] === Base.REGISTRATION_ID1, 'response error')
     }
-  }) }, oneSecond * 2)
+  })
+}, oneSecond * 2)
 
 setTimeout(function () {
   var toAddUsers = [ Base.REGISTRATION_ID1 ]
@@ -40,7 +40,8 @@ setTimeout(function () {
     if (!err && res) {
       assert.equal(res, 200, 'response error')
     }
-  }) }, oneSecond * 3)
+  })
+}, oneSecond * 3)
 
 setTimeout(function () {
   client.isDeviceInTag('tag4', Base.REGISTRATION_ID1, function (err, res) {
@@ -48,7 +49,8 @@ setTimeout(function () {
       console.log('got result' + res)
       assert.equal(res['result'], true, 'response error')
     }
-  }) }, oneSecond * 4)
+  })
+}, oneSecond * 4)
 
 setTimeout(function () {
   client.isDeviceInTag('tag4', Base.REGISTRATION_ID2, function (err, res) {
@@ -56,36 +58,41 @@ setTimeout(function () {
       console.log('got result' + res)
       assert.equal(res['result'], false, 'response error')
     }
-  }) }, oneSecond * 5)
+  })
+}, oneSecond * 5)
 
 setTimeout(function () {
   client.getTagList(function (err, res) {
     console.log('got resultasdasdasd' + res.tags)
     if (!err && res) {
-      assert.ok(res.tags[0] != undefined, 'response error')
+      assert.ok(res.tags[0] !== undefined, 'response error')
     }
-  })  }, oneSecond * 6)
+  })
+}, oneSecond * 6)
 
 setTimeout(function () {
   client.deleteTag('tag4', null, function (err, res) {
     if (!err && res) {
       assert.equal(res, 200, 'response error')
     }
-  }) }, oneSecond * 7)
+  })
+}, oneSecond * 7)
 
 setTimeout(function () {
   client.getAliasDeviceList('alias1', null, function (err, res) {
     if (!err && res) {
-      assert.ok(res.registration_ids != undefined, 'response error')
+      assert.ok(res.registration_ids !== undefined, 'response error')
     }
-  }) }, oneSecond * 8)
+  })
+}, oneSecond * 8)
 
 setTimeout(function () {
   client.deleteAlias('alias2', null, function (err, res) {
     if (!err && res) {
       assert.equal(res, 200, 'response error')
     }
-  }) }, oneSecond * 9)
+  })
+}, oneSecond * 9)
 
 setTimeout(function () {
   var tagsToAdd = [ 'tag1', 'tag2' ]
@@ -95,7 +102,8 @@ setTimeout(function () {
       if (!err && res) {
         assert.equal(res, 200, 'response error')
       }
-    }) }, oneSecond * 10)
+    })
+}, oneSecond * 10)
 
 setTimeout(function () {
   client.getDeviceTagAlias(Base.REGISTRATION_ID1, function (err, res) {
@@ -106,7 +114,7 @@ setTimeout(function () {
         console.log(err.message)
       }
     } else {
-      tag = ['tag1', 'tag2']
+      var tag = ['tag1', 'tag2']
       assert.equal(res.tags.sort().toString(), tag.sort().toString(), 'response error')
     }
   })

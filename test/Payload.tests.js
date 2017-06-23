@@ -1,4 +1,4 @@
-var should = require('should')
+require('should')
 var JPush = require('../index')
 var Base = require('./BaseTest')
 
@@ -168,7 +168,7 @@ describe('PushPayload test', function () {
     }
     var result = JSON.stringify(json)
 
-    var payload = client.push().setOptions(123456, 60 , 654321, true)
+    var payload = client.push().setOptions(123456, 60, 654321, true)
     payload.toJSON().should.equal(result)
     done()
   })
@@ -236,7 +236,7 @@ describe('PushPayload test', function () {
           alert: Base.ALERT,
           sound: 'happy',
           badge: 2,
-          'content-available': 1,
+          'content-available': true,
           extras: Base.EXTRAS
         },
         alert: Base.ALERT
