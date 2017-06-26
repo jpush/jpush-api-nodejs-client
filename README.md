@@ -1,5 +1,7 @@
 # JPush API client library for Node.js
 
+[![Build Status](https://travis-ci.org/jpush/jpush-api-nodejs-client.svg?branch=master)](https://travis-ci.org/jpush/jpush-api-nodejs-client)
+
 本 SDK 提供 JPush 服务端接口的 Node 封装，与 JPush Rest API 组件通信。使用时引用该模块即可，可参考附带 Demo 学习使用方法。
 
 [REST API 文档](http://docs.jiguang.cn/jpush/server/push/server_overview/)
@@ -60,7 +62,7 @@ client.push().setPlatform('ios', 'android')
 关于 Payload 对象的方法，参考[详细 API 文档](https://github.com/jpush/jpush-api-nodejs-client/blob/master/doc/api.md)。
 
 ### 获取统计信息
-本 Node lib 简易封装获取统计信息的接口，传入推送 API 返回的 msg_id 列表，多个 msg_id 用逗号隔开，最多支持 100 个 msg_id。  
+本 Node lib 简易封装获取统计信息的接口，传入推送 API 返回的 msg_id 列表，多个 msg_id 用逗号隔开，最多支持 100 个 msg_id。
 更多详细要求，请参考 [Report API 文档](https://docs.jiguang.cn/jpush/server/push/rest_api_v3_report/)。
 
 ```js
