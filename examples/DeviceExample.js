@@ -16,8 +16,7 @@ client.getDeviceTagAlias('0900e8d85ef', function (err, res) {
   }
 })
 
-tagsToAdd = ['tag1', 'tag2']
-tagsToRemove = ['tag3', 'tag4']
+var tagsToAdd = ['tag1', 'tag2']
 
 client.updateDeviceTagAlias('171976fa8a8085fcdba', 'alias1', false, tagsToAdd, [],
  function (err, res) {
@@ -46,8 +45,8 @@ client.getTagList(function (err, res) {
   }
 })
 
-toAddUsers = ['18071adc030dd6faa56', '171976fa8a8085fcdba']
-toRemoveUsers = ['171976fa8a8085fcdba']
+var toAddUsers = ['18071adc030dd6faa56', '171976fa8a8085fcdba']
+var toRemoveUsers = ['171976fa8a8085fcdba']
 
 client.addRemoveDevicesFromTag('tagtag', toAddUsers, toRemoveUsers,
   function (err, res) {
