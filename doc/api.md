@@ -11,8 +11,11 @@
 |-----|-----|
 |tag|创建 audience 的 tag 属性,使用方法请参考 Audience 示例。|
 |tag_and|创建 audience 的 tag_and 属性,使用方法请参考 Audience 示例。|
+|tag_not|创建 audience 的 tag_not 属性,使用方法请参考 Audience 示例。|
 |alias|创建 audience 的 alias 属性,使用方法请参考 Audience 示例。|
 |registration_id|创建 audience 的 reigistration 属性，使用方法请参考 Audience 示例。|
+|segment|创建 audience 的 segment 属性，使用方法请参考 Audience 示例。|
+|abtest|创建 audience 的 abtest 属性，使用方法请参考 Audience 示例。|
 |ios|创建 iOS Notification，接收 5 个参数：alert, sound, badge, contentAvailable, extras。|
 |android|创建 Android Notification。|
 |winphone|创建 WinPhone Notification。|
