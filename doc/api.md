@@ -32,7 +32,7 @@
 |contentAvailable|boolean|否|无|推送的时候携带 "content-available":true 说明是 Background Remote Notification，如果不携带此字段则是普通的 Remote Notification。详情参考：[Background Remote Notification](http://docs.jiguang.cn/jpush/client/iOS/ios_new_fetures/#ios-7-background-remote-notification)|
 |extras|object|否|无|自定义 key / value 信息，以供业务使用。|
 |category|string|否|无|iOS 8 开始支持，即 APNs payload 中的 'category' 字段。|
-|mutable-content|boolean|否|无|推送的时候携带"mutable-content":true 说明是支持 iOS 10 的 UNNotificationServiceExtension，如果不携带此字段则是普通的 Remote Notification。详情参考：[UNNotificationServiceExtension](https://developer.apple.com/reference/usernotifications/unnotificationserviceextension)|
+|mutableContent|boolean|否|无|推送的时候携带"mutable-content":true 说明是支持 iOS 10 的 UNNotificationServiceExtension，如果不携带此字段则是普通的 Remote Notification。详情参考：[UNNotificationServiceExtension](https://developer.apple.com/reference/usernotifications/unnotificationserviceextension)|
 
 **android(alert, title, builder_id, extras, priority, category, style, value, alertType)**
 
