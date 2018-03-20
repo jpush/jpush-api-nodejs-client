@@ -1,5 +1,8 @@
 var JPush = require('jpush-sdk')
-var client = JPush.buildClient('dd1066407b044738b6479275', '6b135be0037a5c1e693c3dfa')
+var client = JPush.buildClient('a1703c14b186a68a66ef86c1', '9dabdf8bb704b421759cb49c')
+
+// 使用 proxy
+// var client = JPush.buildClient('a1703c14b186a68a66ef86c1', '9dabdf8bb704b421759cb49c', null, null, null,'http://192.168.8.236:3128')
 
 // easy push.
 client.push().setPlatform(JPush.ALL)
