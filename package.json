@@ -1,6 +1,6 @@
 {
   "name": "jpush-sdk",
-  "version": "3.4.4",
+  "version": "3.4.5",
   "description": "JPush's officially supported Node.js client library.",
   "main": "index.js",
   "scripts": {
