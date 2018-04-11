@@ -1,4 +1,4 @@
-var JPush = require("../index.js");
+var JPush = require("../index.js").JPush;
 var client = JPush.buildClient('a1703c14b186a68a66ef86c1', '9dabdf8bb704b421759cb49c')
 
 // 使用 proxy

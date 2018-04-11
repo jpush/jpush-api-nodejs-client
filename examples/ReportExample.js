@@ -1,4 +1,4 @@
-var JPush = require("../index.js");
+var JPush = require("../index.js").JPush;
 
 var client = JPush.buildClient('96261ea4bcaae3f4a167a495', 'db1abbffbb619458b7785164')
 

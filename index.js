@@ -1,4 +1,7 @@
 /**
  * @author: JPush
  */
-module.exports = require('./lib/JPush/JPush.js')
+module.exports = {
+    JPush: require('./lib/JPush/JPush.js'),
+    JPushAsync: require('./lib/JPush/JPushAsync.js')
+}
