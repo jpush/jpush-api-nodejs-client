@@ -1,6 +1,6 @@
 {
-  "name": "jpush-sdk",
-  "version": "3.4.5",
+  "name": "jpush-async",
+  "version": "0.0.1",
   "description": "JPush's officially supported Node.js client library.",
   "main": "index.js",
   "scripts": {
@@ -8,7 +8,7 @@
     "lint": "standard --env=mocha"
   },
   "engines": {
-    "node": ">=0.12"
+    "node": ">=7.6"
   },
   "keywords": [
     "jpush",
