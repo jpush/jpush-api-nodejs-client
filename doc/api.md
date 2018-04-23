@@ -77,7 +77,6 @@
 
 ----------
 
-
 ### JPush  
 
 JPush Client API，调用该类的实例执行对 JPush API 的请求。
@@ -98,80 +97,57 @@ JPush Client API，调用该类的实例执行对 JPush API 的请求。
 
 创建推送对象 PushPayload，每次推送创建一个推送对象。
 
-#### sendPush(payload, callback)
+#### sendPush(payload)
 
 推送 payload 对象到 JPush 服务器上，该方法由 PushPayload.send() 调用，建议不要主动调用此函数。
 
 |参数|类型|必须|默认值|说明|
 |-----|-----|-----|-----|-----|
 |payload|PushPayload|是|无|需要推送的 PushPayload 对象。|
-|callback(err, res)|function|是|无|推送后的回调函数，第一个参数是错误对象，属于 APIConnectionError, APIRequestError 之一，正常时为 NULL，第二个参数是推送成功返回的对象。 |
 
-推送成功后，callback 中的 res 对象：
-
-|字段名|类型|说明|
-|-----|-----|-----|
-|sendno|int|纯粹用来作为 API 调用标识，API 返回时被原样返回，以方便 API 调用方匹配请求与返回。|
-|msg_id|string|标识每一次推送的唯一的 ID。|
-
-
-#### getReportReceiveds(msg_ids, callback)
+#### getReportReceiveds(msg_ids)
 
 获取对应 msg_id 的返回报告，多个 msg_id 用逗号连接起来，中间不要有空格。
 
 |参数|类型|必须|默认值|说明|
 |-----|-----|-----|-----|-----|
 |msg_ids|string|是|无|需要获取的 msg_id，多个 msg_id用逗号连接起来，中间不要有空格。|
-|callback(err, res)|function|是|无|推送后的回调函数，第一个参数是错误对象，属于 APIConnectionError, APIRequestError 之一，正常时为 NULL，第二个参数是推送成功返回的对象。|
 
-推送成功后，callback 中的 res 对象是一个数组，代表获取的每一个对象的Report：
-
-|字段名|类型|说明|
-|-----|-----|-----|
-|android_received |int|Android 送达。如果无此项数据则为 null。|
-|ios_apns_sent |int| iOS 推送成功。如果无此项数据则为 null。|
-|msg_id|string|该 report 对应的 msg_id。|
-
-#### setSchedule(payload, callback)
+#### setSchedule(payload)
 设置指定的定时任务，该方法由 PushPayload.setSchedule() 调用，不需要主动调用此函数。
 
 |参数|类型|必须|默认值|说明|
 |-----|-----|-----|-----|-----|
 |payload|PushPayload|是|无|需要设置的 PushPayload 对象。|
-|callback(err, res)|function|是|无|推送后的回调函数。第一个参数是错误对象，属于 APIConnectionError, APIRequestError 之一，正常时为 NULL，第二个参数是推送成功返回的对象。 |
 
-#### updateSchedule(scheduleID, payload, callback)
+#### updateSchedule(scheduleID, payload)
 更新指定的定时任务，该方法由 PushPayload.updateSchedule() 调用，不需要主动调用此函数。
 
 |参数|类型|必须|默认值|说明|
 |-----|-----|-----|-----|-----|
 |scheduleID|string|是|无|需要更新的定时任务 ID。|
 |payload|PushPayload|是|无|需要设置的 PushPayload 对象。|
-|callback(err, res)|function|是|无|推送后的回调函数。第一个参数是错误对象，属于 APIConnectionError, APIRequestError 之一，正常时为 NULL，第二个参数是推送成功返回的对象。 |
 
-#### getScheduleList(page, callback)
+#### getScheduleList(page)
 获取有效的定时任务列表。
 
 |参数|类型|必须|默认值|说明|
 |-----|-----|-----|-----|-----|
 |page|int|是|无|请求页的页数，每页最多返回 50 个，如果请求页页数大于总页数，则 schedule 为空。|
-|callback(err, res)|function|是|无|推送后的回调函数。第一个参数是错误对象，属于 APIConnectionError, APIRequestError 之一，正常时为 NULL，第二个参数是推送成功返回的对象。 |
 
-#### getSchedule(scheduleID, callback)
+#### getSchedule(scheduleID)
 获取指定的定时任务信息。
 
 |参数|类型|必须|默认值|说明|
 |-----|-----|-----|-----|-----|
 |scheduleID|string|是|无|指定的定时任务 ID。|
-|callback(err, res)|function|是|无|推送后的回调函数。第一个参数是错误对象，属于 APIConnectionError, APIRequestError 之一，正常时为 NULL，第二个参数是推送成功返回的对象。 |
 
-#### delSchedule(scheduleID, callback)
+#### delSchedule(scheduleID)
 删除指定的定时任务。
 
 |参数|类型|必须|默认值|说明|
 |-----|-----|-----|-----|-----|
 |scheduleID|string|是|无|指定的定时任务 ID。|
-|callback(err, res)|function|是|无|推送后的回调函数。第一个参数是错误对象，属于 APIConnectionError, APIRequestError 之一，正常时为 NULL，第二个参数是推送成功返回的对象。 |
 
 ----------
 
@@ -194,8 +170,8 @@ JPush Client API，调用该类的实例执行对 JPush API 的请求。
 |isGlobalExceedLength|检测当前 payload 是否超出长度限定，返回 true / false（iOS Notification 不超过 220 并且所有平台的 notification + message不超过1200）。|
 |setSingleSchedule|配置简单的定时任务，参数为形如 'YYYY-MM-DD HH:MM:SS' 的字符串。|
 |setPeriodicalSchedule|配置较复杂的定期任务，参数包括 `startDate(string)`, `endDate(string)`, `time(string)`, `timeUnit(string)`, `frequency(int)`, `point(string array)`，具体参数用法可参照[官方文档](http://docs.jiguang.cn/server/rest_api_push_schedule/#schedule_1)。|
-|setSchedule|向服务器提交设置的定时任务。参数：`name(string)`, `enabled(boolean)`, `callback`。|
-|updateSchedule|向服务器请求更新指定的定期任务。参数：`id(string)`, `name(string)`, `enabled(boolean)`, `callback`。|
+|setSchedule|向服务器提交设置的定时任务。参数：`name(string)`, `enabled(boolean)`。|
+|updateSchedule|向服务器请求更新指定的定期任务。参数：`id(string)`, `name(string)`, `enabled(boolean)`。|
 
 开发者可以参考[推送示例][2]快速了解推送细节和[定时任务示例](/examples/ScheduleExample.js)了解定时任务细节。
 
