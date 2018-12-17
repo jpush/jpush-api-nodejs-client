@@ -1,5 +1,5 @@
 require('should')
-var JPush = require('../index')
+var JPush = require('../index').JPushAsync
 var Base = require('./BaseTest')
 
 describe('PushPayload test', function () {
@@ -20,7 +20,7 @@ describe('PushPayload test', function () {
     var result = JSON.stringify(json)
 
     var payload = client.push().setPlatform(JPush.ALL).setOptions(123456)
-    payload.toJSON().should.equal(result)
+    payload.toJSON().should.equal(json)
     done()
   })
 
@@ -35,7 +35,7 @@ describe('PushPayload test', function () {
     var result = JSON.stringify(json)
 
     var payload = client.push().setPlatform('ios', 'winphone').setOptions(123456)
-    payload.toJSON().should.equal(result)
+    payload.toJSON().should.equal(json)
     done()
   })
 
@@ -50,7 +50,7 @@ describe('PushPayload test', function () {
     var result = JSON.stringify(json)
 
     var payload = client.push().setPlatform(['ios', 'winphone']).setOptions(123456)
-    payload.toJSON().should.equal(result)
+    payload.toJSON().should.equal(json)
     done()
   })
 
@@ -65,7 +65,7 @@ describe('PushPayload test', function () {
     var result = JSON.stringify(json)
 
     var payload = client.push().setAudience(JPush.ALL).setOptions(123456)
-    payload.toJSON().should.equal(result)
+    payload.toJSON().should.equal(json)
     done()
   })
 
@@ -90,7 +90,7 @@ describe('PushPayload test', function () {
       JPush.alias('alias1', 'alias2'),
       JPush.registration_id('id1', 'id2')
     ).setOptions(123456)
-    payload.toJSON().should.equal(result)
+    payload.toJSON().should.equal(json)
     done()
   })
 
@@ -115,7 +115,7 @@ describe('PushPayload test', function () {
       JPush.alias('alias1,alias2'),
       JPush.registration_id('id1,id2')
     ).setOptions(123456)
-    payload.toJSON().should.equal(result)
+    payload.toJSON().should.equal(json)
     done()
   })
 
@@ -132,7 +132,7 @@ describe('PushPayload test', function () {
     var result = JSON.stringify(json)
 
     var payload = client.push().setMessage('msg content').setOptions(123456)
-    payload.toJSON().should.equal(result)
+    payload.toJSON().should.equal(json)
     done()
   })
 
@@ -153,7 +153,7 @@ describe('PushPayload test', function () {
 
     var payload = client.push().setMessage('msg content', 'msg title', 'content type', Base.EXTRAS)
       .setOptions(123456)
-    payload.toJSON().should.equal(result)
+    payload.toJSON().should.equal(json)
     done()
   })
 
@@ -169,7 +169,7 @@ describe('PushPayload test', function () {
     var result = JSON.stringify(json)
 
     var payload = client.push().setOptions(123456, 60, 654321, true)
-    payload.toJSON().should.equal(result)
+    payload.toJSON().should.equal(json)
     done()
   })
 
@@ -186,7 +186,7 @@ describe('PushPayload test', function () {
     var result = JSON.stringify(json)
 
     var payload = client.push().setNotification(Base.ALERT).setOptions(123456)
-    payload.toJSON().should.equal(result)
+    payload.toJSON().should.equal(json)
     done()
   })
 
@@ -209,7 +209,7 @@ describe('PushPayload test', function () {
 
     var payload = client.push().setNotification(Base.ALERT, JPush.ios(Base.ALERT, 'happy', 5))
       .setOptions(123456)
-    payload.toJSON().should.equal(result)
+    payload.toJSON().should.equal(json)
     done()
   })
 
@@ -249,7 +249,7 @@ describe('PushPayload test', function () {
       JPush.android(Base.ALERT, Base.TITLE, 1, Base.EXTRAS),
       JPush.winphone(Base.ALERT, Base.TITLE, 'open page', Base.EXTRAS)
     ).setOptions(123456)
-    payload.toJSON().should.equal(result)
+    payload.toJSON().should.equal(json)
     done()
   })
 
