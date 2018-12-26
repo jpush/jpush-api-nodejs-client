@@ -1,4 +1,4 @@
-var JPush = require('../index')
+var JPush = require('../index').JPush
 var Base = require('./BaseTest')
 
 describe('Push test', function () {
