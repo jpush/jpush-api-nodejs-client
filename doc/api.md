@@ -90,6 +90,7 @@ JPush Client API，调用该类的实例执行对 JPush API 的请求。
 |appKey|string|是|无|开发者 AppKey，可从 JPush Portal 获取|
 |masterSecret|string|是|无|开发者 masterSecret，可从 JPush Portal 获取|
 |retryTimes|int|否|5|请求失败重试次数|
+|isGroup|bool|否|false|是否是群组发送，一个实例只能为群组或不是群组，无法切换|
 
 该类包含的接口有：
 
