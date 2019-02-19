@@ -19,8 +19,8 @@
   "author": "jpush",
   "license": "MIT",
   "dependencies": {
-    "debug": "2.6.1",
-    "request": "~2.79.0",
+    "debug": "2.6.9",
+    "request": "^2.88.0",
     "request-promise": "^4.2.2"
   },
   "devDependencies": {
