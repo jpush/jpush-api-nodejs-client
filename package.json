@@ -1,6 +1,6 @@
 {
   "name": "jpush-async",
-  "version": "4.0.2",
+  "version": "4.0.3",
   "description": "JPush's officially supported Node.js client library.",
   "main": "index.js",
   "scripts": {

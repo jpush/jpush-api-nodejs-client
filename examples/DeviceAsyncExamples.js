@@ -1,6 +1,7 @@
 var JPush = require("../index.js").JPushAsync;
+var Conf = require("./Conf.js");
 
-var client = JPush.buildClient('a1703c14b186a68a66ef86c1', '9dabdf8bb704b421759cb49c')
+var client = JPush.buildClient(Conf.appKey, Conf.masterSecret);
 
 async function fun() {
     try {

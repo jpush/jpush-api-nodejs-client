@@ -94,3 +94,5 @@ typings/
 
 \.idea/
 package-lock.json
+/examples/Conf.js
+/test/BaseTest.js

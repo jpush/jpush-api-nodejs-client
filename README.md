@@ -61,12 +61,12 @@ client.push().setPlatform('ios', 'android')
 ```js
 // 在构建 JPushClient 对象的时候, 指定 isDebug 参数。
 var client = JPush.buildClient({
-    appKey:'47a3ddda34b2602fa9e17c01',
-    masterSecret:'d94f733358cca97b18b2cb98',
+    appKey:'your appKey',
+    masterSecret:'your masterSecret',
     isDebug:false
 });
 // or
-var client = JPush.buildClient('47a3ddda34b2602fa9e17c01', 'd94f733358cca97b18b2cb98', null, false);
+var client = JPush.buildClient('your appKey', 'your masterSecret', null, false);
 ```
 
 > 目前使用了 debug 模块来控制日志输出，若要查看 JPush 的相关日志信息，请先配置 DEBUG 环境变量 'jpush'。

@@ -1,5 +1,7 @@
 var JPush = require("../index.js").JPush;
-var client = JPush.buildClient('96261ea4bcaae3f4a167a495', 'db1abbffbb619458b7785164')
+var Conf = require("./Conf.js");
+
+var client = JPush.buildClient(Conf.appKey, Conf.masterSecret);
 
 // 设置定时任务。
 client.push().setPlatform(JPush.ALL)

@@ -1,8 +1,10 @@
 var JPush = require("../index.js").JPush;
-var client = JPush.buildClient('a1703c14b186a68a66ef86c1', '9dabdf8bb704b421759cb49c')
+var Conf = require("./Conf.js");
+
+var client = JPush.buildClient(Conf.appKey, Conf.masterSecret);
 
 // 使用 proxy
-// var client = JPush.buildClient('a1703c14b186a68a66ef86c1', '9dabdf8bb704b421759cb49c', null, null, null,'http://192.168.8.236:3128')
+// var client = JPush.buildClient(Conf.appKey, Conf.masterSecret, null, null, null,'http://192.168.8.236:3128')
 
 // easy push.
 client.push().setPlatform(JPush.ALL)
