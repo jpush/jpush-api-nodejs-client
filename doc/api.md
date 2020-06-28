@@ -48,6 +48,18 @@
 |value|object|否|无|当 style = 1, 为大文本通知栏样式，类型为 string，内容会被通知栏以大文本的形式展示出来。支持 API 16 以上的 rom；<br>当 style = 2，为文本条目通知栏样式，类型为 json 对象，json 的每个 key 对应的 value 会被当作文本条目逐条展示。支持 API 16 以上的 rom；<br>当 style = 3，为大图片通知栏样式，类型为 string，可以是网络图片 url，或本地图片的 path，目前支持.jpg和.png后缀的图片。图片内容会被通知栏以大图片的形式展示出来。如果是 http／https 的url，会自动下载；如果要指定开发者准备的本地图片就填 sdcard 的相对路径。支持 API 16以上的 rom。|
 |alertTYpe|int|否|-1|可选范围为 -1 ～ 7 ，对应 Notification.DEFAULT_ALL = -1 或者 Notification.DEFAULT_SOUND = 1, Notification.DEFAULT_VIBRATE = 2, Notification.DEFAULT_LIGHTS = 4 的任意 “or” 组合。默认按照 -1 处理。|
 
+***注：对于Android notification 其他参数，比如：uri_activity，uri_action等，可使用如下方式添加:***
+```
+// 创建android notification对象
+var androidObj = JPush.android('Hi,JPush', 'JPush Title', 1, {'key':'value'});
+// 新增参数：uri_activity， uri_action
+androidObj.android['uri_activity'] = 'xxx';
+androidObj.android['uri_action'] = 'xxx';
+```
+ 
+ 
+
+
 **winphone(alert, title, openPage, extras)**
 
 |参数|类型|必须|默认值|说明|
