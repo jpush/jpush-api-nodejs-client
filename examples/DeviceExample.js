@@ -113,3 +113,16 @@ client.deleteAlias('alias2', null, function (err, res) {
     console.log('success')
   }
 })
+
+/** 查询设备在线状态 */
+client.getDeviceStatus(["160a3797c80b688c24b"], function(err, res) {
+  if (err) {
+    if (err instanceof JPush.APIConnectionError) {
+      console.log(err.message)
+    } else if (err instanceof JPush.APIRequestError) {
+      console.log(err.message)
+    }
+  } else {
+    console.log(res);
+  }
+})

@@ -26,3 +26,13 @@ client.getDeviceTagAlias('0900e8d85ef')
     }).catch(function(err) {
         console.log(err)
     })
+
+async function getDeviceStatus() {
+    const resp = await client.getDeviceStatus(['171976fa8a8085fcdba']);
+    if (resp.err) {
+        console.log(resp.err.message)
+    } else {
+        console.log(resp.res);
+    }
+}
+getDeviceStatus();
