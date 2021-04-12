@@ -34,7 +34,7 @@
 |category|string|否|无|iOS 8 开始支持，即 APNs payload 中的 'category' 字段。|
 |mutableContent|boolean|否|无|推送的时候携带"mutable-content":true 说明是支持 iOS 10 的 UNNotificationServiceExtension，如果不携带此字段则是普通的 Remote Notification。详情参考：[UNNotificationServiceExtension](https://developer.apple.com/reference/usernotifications/unnotificationserviceextension)|
 
-**android(alert, title, builder_id, extras, priority, category, style, value, alertType)**
+**android(alert, title, builder_id, extras, priority, category, style, value, alertType, channel_id)**
 
 |参数|类型|必须|默认值|说明|
 |-----|-----|-----|-----|-----|
@@ -47,6 +47,7 @@
 |style|int|否|无|通知栏样式类型，默认为0，还有1，2，3可选，用来指定选择哪种通知栏样式，其他值无效。有三种可选分别为 bigText=1，Inbox=2，bigPicture=3。|
 |value|object|否|无|当 style = 1, 为大文本通知栏样式，类型为 string，内容会被通知栏以大文本的形式展示出来。支持 API 16 以上的 rom；<br>当 style = 2，为文本条目通知栏样式，类型为 json 对象，json 的每个 key 对应的 value 会被当作文本条目逐条展示。支持 API 16 以上的 rom；<br>当 style = 3，为大图片通知栏样式，类型为 string，可以是网络图片 url，或本地图片的 path，目前支持.jpg和.png后缀的图片。图片内容会被通知栏以大图片的形式展示出来。如果是 http／https 的url，会自动下载；如果要指定开发者准备的本地图片就填 sdcard 的相对路径。支持 API 16以上的 rom。|
 |alertTYpe|int|否|-1|可选范围为 -1 ～ 7 ，对应 Notification.DEFAULT_ALL = -1 或者 Notification.DEFAULT_SOUND = 1, Notification.DEFAULT_VIBRATE = 2, Notification.DEFAULT_LIGHTS = 4 的任意 “or” 组合。默认按照 -1 处理。|
+|channel_id|string|否|无|不超过 1000 字节|
 
 ***注：对于Android notification 其他参数，比如：uri_activity，uri_action等，可使用如下方式添加:***
 ```
@@ -176,7 +177,7 @@ JPush Client API，调用该类的实例执行对 JPush API 的请求。
 |setAudience|设置 audience，本方法接收 `JPush.ALL`，或者是 `tag()`,  `tag_and()`, `alias()`, `registration_id()` 创建的对象，具体可参考 Audience 示例。|
 |setNotification|设置 notification，本方法接收 `ios()`, `android()`, `winphone()`等方法创建的对象，如果第一个参数为字符串，则指定全局的 alert，具体可参考 Notification 示例。|
 |setMessage|设置 message，本方法接受 4 个参数`msg_content(string,必填)`, `title(string)`, `content_type(string)`, `extras(Object)`。|
-|setOptions|设置 options，本方法接收 5 个参数，`sendno(int)`, `time_to_live(int)`, `override_msg_id(int)`, `apns_production(boolean)`, `big_push_duration(int)`。|
+|setOptions|设置 options，本方法接收 6 个参数，`sendno(int)`, `time_to_live(int)`, `override_msg_id(int)`, `apns_production(boolean)`, `big_push_duration(int)`, `apns_collapse_id(string)`。|
 |toJSON|将当前 payload 对象转换为 json 字符串。|
 |send|推送当前 payload 对象。|
 |isIosExceedLength|检测当前 payload 是否超出 iOS notification 长度限定，返回 true / false（iOS Notification 不超过 220 并且 iOS notification + message 不超过 1200）。|
@@ -187,6 +188,21 @@ JPush Client API，调用该类的实例执行对 JPush API 的请求。
 |updateSchedule|向服务器请求更新指定的定期任务。参数：`id(string)`, `name(string)`, `enabled(boolean)`。|
 
 开发者可以参考[推送示例][2]快速了解推送细节和[定时任务示例](/examples/ScheduleExample.js)了解定时任务细节。
+
+***注：对于 setOptions 的 third_party_channel 参数，可使用如下方式添加:***
+```
+// 创建 push 对象并设置 options
+var req = JPushClient.push()
+    .setOptions(null, 86400)
+// 设置 third_party_channel
+req.payload.options.third_party_channel = {
+    xiaomi: {
+        distribution: 'secondary_push'
+    }
+}
+```
+
+- third_party_channel 的具体用法参照 [Push API V3](https://docs.jiguang.cn/jpush/server/push/rest_api_v3_push/#options)
 
 
 ### Platform 示例
