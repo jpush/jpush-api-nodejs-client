@@ -1,6 +1,6 @@
 {
   "name": "jpush-async",
-  "version": "4.1.0",
+  "version": "4.2.0",
   "description": "JPush's officially supported Node.js client library.",
   "main": "index.js",
   "scripts": {
@@ -24,6 +24,7 @@
     "request-promise": "^4.2.2"
   },
   "devDependencies": {
+    "@types/node": "^22.10.7",
     "assert": "1.1.2",
     "mocha": "~1.12.1",
     "should": "~1.2.2",
